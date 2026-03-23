@@ -1,0 +1,268 @@
+======================================================================
+KAPPA SENSITIVITY TESTS
+T_eff = 1.5 MK, log T = 6.176
+Date: 2026-03-23 11:20:54
+======================================================================
+
+Loading Stage 2 checkpoint (κ-independent per-ion contributions)...
+  Loaded 984 ion-channel entries across 6 channels
+Loading demregpy AIA response from: C:\Users\victo\AppData\Roaming\Python\Python310\site-packages\demregpy\tresp\aia_tresp_en.dat
+  Temperature grid: log T = 4.00 to 9.00, 101 points
+  Channels: ['A94', 'A131', 'A171', 'A193', 'A211', 'A335']
+
+######################################################################
+# TEST 1: κ sensitivity (κ = 2, 2.5, 3)
+######################################################################
+
+==================================================
+  κ=2: κ=2, T_core=0.38 MK
+==================================================
+
+  Fe ion fraction ratios at log T = 6.176:
+    Fe  VIII: κ=5.1862e-02  Mxw=2.4243e-03  ratio=21.393
+    Fe    IX: κ=1.9808e-01  Mxw=3.1018e-02  ratio=6.386
+    Fe     X: κ=2.8629e-01  Mxw=1.1926e-01  ratio=2.400
+    Fe    XI: κ=2.6596e-01  Mxw=2.7864e-01  ratio=0.954
+    Fe   XII: κ=1.1888e-01  Mxw=2.6834e-01  ratio=0.443
+    Fe  XIII: κ=5.5636e-02  Mxw=1.9970e-01  ratio=0.279
+    Fe   XIV: κ=1.4607e-02  Mxw=7.5068e-02  ratio=0.195
+    Fe    XV: κ=3.3476e-03  Mxw=2.0554e-02  ratio=0.163
+    Fe   XVI: κ=9.1517e-04  Mxw=3.5691e-03  ratio=0.256
+    Fe  XVII: κ=1.5722e-03  Mxw=1.3772e-03  ratio=1.142
+
+  Per-channel κ/Mxw DN ratios:
+      94 Å: 1.865
+     131 Å: 3.633
+     171 Å: 5.191
+     193 Å: 0.702
+     211 Å: 0.481
+     335 Å: 0.997
+
+Running DEM inversion...
+  Input DN: [  1.78975298  11.53419428 613.03225253 448.45093082  62.25043341
+   3.40764447]
+  Input errors: [ 1.58692841  2.69303613 15.44588559 12.25446385  4.50827448  1.43854401]
+  Temperature bins: 31 from log T = 5.7 to 7.2
+  χ² = 17.459
+  DN recovery: [0.6142765  0.81601207 0.82069106 0.80682735 1.13144708 1.07703193]
+
+==================================================
+  κ=2.5: κ=2.5, T_core=0.60 MK
+==================================================
+
+  Fe ion fraction ratios at log T = 6.176:
+    Fe  VIII: κ=1.6523e-02  Mxw=2.4243e-03  ratio=6.815
+    Fe    IX: κ=9.6240e-02  Mxw=3.1018e-02  ratio=3.103
+    Fe     X: κ=2.0606e-01  Mxw=1.1926e-01  ratio=1.728
+    Fe    XI: κ=2.8988e-01  Mxw=2.7864e-01  ratio=1.040
+    Fe   XII: κ=1.8934e-01  Mxw=2.6834e-01  ratio=0.706
+    Fe  XIII: κ=1.2548e-01  Mxw=1.9970e-01  ratio=0.628
+    Fe   XIV: κ=4.6469e-02  Mxw=7.5068e-02  ratio=0.619
+    Fe    XV: κ=1.4623e-02  Mxw=2.0554e-02  ratio=0.711
+    Fe   XVI: κ=4.9799e-03  Mxw=3.5691e-03  ratio=1.395
+    Fe  XVII: κ=8.9815e-03  Mxw=1.3772e-03  ratio=6.522
+
+  Per-channel κ/Mxw DN ratios:
+      94 Å: 1.370
+     131 Å: 1.771
+     171 Å: 2.655
+     193 Å: 0.848
+     211 Å: 0.735
+     335 Å: 0.948
+
+Running DEM inversion...
+  Input DN: [  1.31479212   5.62243686 313.60278718 541.24398252  95.13700973
+   3.24275664]
+  Input errors: [ 1.48152444  2.0612923  11.07662346 13.45166711  5.50464724  1.42711247]
+  Temperature bins: 31 from log T = 5.7 to 7.2
+  χ² = 7.588
+  DN recovery: [0.80232341 0.96880492 0.92248965 0.84413902 1.0651976  1.1198916 ]
+
+==================================================
+  κ=3: κ=3, T_core=0.75 MK
+==================================================
+
+  Fe ion fraction ratios at log T = 6.176:
+    Fe  VIII: κ=9.2636e-03  Mxw=2.4243e-03  ratio=3.821
+    Fe    IX: κ=6.5626e-02  Mxw=3.1018e-02  ratio=2.116
+    Fe     X: κ=1.6679e-01  Mxw=1.1926e-01  ratio=1.398
+    Fe    XI: κ=2.7807e-01  Mxw=2.7864e-01  ratio=0.998
+    Fe   XII: κ=2.1086e-01  Mxw=2.6834e-01  ratio=0.786
+    Fe  XIII: κ=1.5771e-01  Mxw=1.9970e-01  ratio=0.790
+    Fe   XIV: κ=6.5722e-02  Mxw=7.5068e-02  ratio=0.875
+    Fe    XV: κ=2.2952e-02  Mxw=2.0554e-02  ratio=1.117
+    Fe   XVI: κ=8.2275e-03  Mxw=3.5691e-03  ratio=2.305
+    Fe  XVII: κ=1.3535e-02  Mxw=1.3772e-03  ratio=9.828
+
+  Per-channel κ/Mxw DN ratios:
+      94 Å: 1.178
+     131 Å: 1.344
+     171 Å: 1.878
+     193 Å: 0.875
+     211 Å: 0.859
+     335 Å: 0.953
+
+Running DEM inversion...
+  Input DN: [  1.1299591    4.26697224 221.7719857  558.65217895 111.20197029
+   3.25677603]
+  Input errors: [ 1.43841984  1.886868    9.33550529 13.66458555  5.93082385  1.42808798]
+  Temperature bins: 31 from log T = 5.7 to 7.2
+  χ² = 5.089
+  DN recovery: [0.90657638 0.99818452 0.96484241 0.86733741 1.03097496 1.12266268]
+
+==========================================================================================
+SENSITIVITY TEST SUMMARY
+==========================================================================================
+
+--- Fe ion fraction ratios (κ/Mxw) at log T = 6.176 ---
+     Ion         κ=2       κ=2.5         κ=3
+--------------------------------------------
+  Fe VIII      21.393       6.815       3.821
+  Fe  IX       6.386       3.103       2.116
+  Fe   X       2.400       1.728       1.398
+  Fe  XI       0.954       1.040       0.998
+  Fe XII       0.443       0.706       0.786
+  Fe XIII       0.279       0.628       0.790
+  Fe XIV       0.195       0.619       0.875
+  Fe  XV       0.163       0.711       1.117
+  Fe XVI       0.256       1.395       2.305
+  Fe XVII       1.142       6.522       9.828
+
+--- Channel DN ratios (κ/Mxw) ---
+ Channel         κ=2       κ=2.5         κ=3
+--------------------------------------------
+    94 Å       1.865       1.370       1.178
+   131 Å       3.633       1.771       1.344
+   171 Å       5.191       2.655       1.878
+   193 Å       0.702       0.848       0.875
+   211 Å       0.481       0.735       0.859
+   335 Å       0.997       0.948       0.953
+
+--- DEM inversion quality ---
+              Metric         κ=2       κ=2.5         κ=3
+--------------------------------------------------------
+                  χ²      17.459       7.588       5.089
+      χ²/dof (dof≈5)       3.492       1.518       1.018
+     Min DN recovery       0.614       0.802       0.867
+     Max DN recovery       1.131       1.120       1.123
+
+--- Per-channel DN recovery ---
+ Channel         κ=2       κ=2.5         κ=3
+--------------------------------------------
+     A94       0.614       0.802       0.907
+    A131       0.816       0.969       0.998
+    A171       0.821       0.922       0.965
+    A193       0.807       0.844       0.867
+    A211       1.131       1.065       1.031
+    A335       1.077       1.120       1.123
+
+--- Physical parameters ---
+           Parameter         κ=2       κ=2.5         κ=3
+--------------------------------------------------------
+         T_core (MK)        0.38        0.60        0.75
+          T_eff (MK)        1.50        1.50        1.50
+        T_core/T_eff       0.250       0.400       0.500
+
+==========================================================================================
+
+Figure saved to C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Figures\kappa_sensitivity_comparison.png
+
+######################################################################
+# TEST 2: Abundance sensitivity at κ=2.5
+#         Coronal (FIP-biased) vs Photospheric
+######################################################################
+ ChiantiPy version 0.15.2 
+ using cli
+ using CLI for selections
+
+==================================================
+  κ=2.5, coronal abundances: κ=2.5, T_core=0.60 MK
+==================================================
+
+  Fe ion fraction ratios at log T = 6.176:
+    Fe  VIII: κ=1.6523e-02  Mxw=2.4243e-03  ratio=6.815
+    Fe    IX: κ=9.6240e-02  Mxw=3.1018e-02  ratio=3.103
+    Fe     X: κ=2.0606e-01  Mxw=1.1926e-01  ratio=1.728
+    Fe    XI: κ=2.8988e-01  Mxw=2.7864e-01  ratio=1.040
+    Fe   XII: κ=1.8934e-01  Mxw=2.6834e-01  ratio=0.706
+    Fe  XIII: κ=1.2548e-01  Mxw=1.9970e-01  ratio=0.628
+    Fe   XIV: κ=4.6469e-02  Mxw=7.5068e-02  ratio=0.619
+    Fe    XV: κ=1.4623e-02  Mxw=2.0554e-02  ratio=0.711
+    Fe   XVI: κ=4.9799e-03  Mxw=3.5691e-03  ratio=1.395
+    Fe  XVII: κ=8.9815e-03  Mxw=1.3772e-03  ratio=6.522
+
+  Per-channel κ/Mxw DN ratios:
+      94 Å: 1.370
+     131 Å: 1.771
+     171 Å: 2.655
+     193 Å: 0.848
+     211 Å: 0.735
+     335 Å: 0.948
+
+Running DEM inversion...
+  Input DN: [  1.31479212   5.62243686 313.60278718 541.24398252  95.13700973
+   3.24275664]
+  Input errors: [ 1.48152444  2.0612923  11.07662346 13.45166711  5.50464724  1.42711247]
+  Temperature bins: 31 from log T = 5.7 to 7.2
+  χ² = 7.588
+  DN recovery: [0.80232341 0.96880492 0.92248965 0.84413902 1.0651976  1.1198916 ]
+
+==================================================
+  κ=2.5, photospheric abundances: κ=2.5, T_core=0.60 MK
+==================================================
+
+  Fe ion fraction ratios at log T = 6.176:
+    Fe  VIII: κ=1.6523e-02  Mxw=2.4243e-03  ratio=6.815
+    Fe    IX: κ=9.6240e-02  Mxw=3.1018e-02  ratio=3.103
+    Fe     X: κ=2.0606e-01  Mxw=1.1926e-01  ratio=1.728
+    Fe    XI: κ=2.8988e-01  Mxw=2.7864e-01  ratio=1.040
+    Fe   XII: κ=1.8934e-01  Mxw=2.6834e-01  ratio=0.706
+    Fe  XIII: κ=1.2548e-01  Mxw=1.9970e-01  ratio=0.628
+    Fe   XIV: κ=4.6469e-02  Mxw=7.5068e-02  ratio=0.619
+    Fe    XV: κ=1.4623e-02  Mxw=2.0554e-02  ratio=0.711
+    Fe   XVI: κ=4.9799e-03  Mxw=3.5691e-03  ratio=1.395
+    Fe  XVII: κ=8.9815e-03  Mxw=1.3772e-03  ratio=6.522
+
+  Per-channel κ/Mxw DN ratios:
+      94 Å: 1.372
+     131 Å: 1.527
+     171 Å: 2.575
+     193 Å: 0.857
+     211 Å: 0.743
+     335 Å: 0.958
+
+Running DEM inversion...
+  Input DN: [  1.31697735   4.84769867 304.09157479 547.32482817  96.13823227
+   3.27585352]
+  Input errors: [ 1.48202656  1.96349529 10.90919806 13.52642241  5.5321674   1.42941438]
+  Temperature bins: 31 from log T = 5.7 to 7.2
+  χ² = 7.557
+  DN recovery: [0.79817772 1.07883685 0.9261461  0.84453876 1.06807474 1.10883817]
+
+======================================================================
+ABUNDANCE COMPARISON (κ=2.5)
+======================================================================
+
+                   Metric       Coronal  Photospheric
+-------------------------------------------------------
+                       χ²         7.588         7.557
+                   χ²/dof         1.518         1.511
+          Min DN recovery         0.802         0.798
+          Max DN recovery         1.120         1.109
+
+  Channel DN ratios (κ/Mxw):
+   Channel       Coronal  Photospheric    Difference
+  --------------------------------------------------
+      94 Å         1.370         1.372         0.002
+     131 Å         1.771         1.527         0.244
+     171 Å         2.655         2.575         0.081
+     193 Å         0.848         0.857         0.010
+     211 Å         0.735         0.743         0.008
+     335 Å         0.948         0.958         0.010
+
+Results saved to C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Results\kappa_sensitivity_results.npz
+
+======================================================================
+ALL SENSITIVITY TESTS COMPLETE
+Full output saved to: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Results\sensitivity_results.txt
+======================================================================

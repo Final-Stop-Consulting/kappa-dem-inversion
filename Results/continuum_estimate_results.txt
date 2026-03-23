@@ -1,0 +1,113 @@
+======================================================================
+CONTINUUM CONTRIBUTION ESTIMATE
+T_eff = 1.5 MK, κ = 2.5
+Date: 2026-03-23 11:50:03
+======================================================================
+
+--- Step 1: Maxwellian continuum at T_eff ---
+ ChiantiPy version 0.15.2 
+ using cli
+ using CLI for selections
+Loading AIA effective area curves...
+
+Computing continuum for 12 elements...
+  H (Z=1): done
+  He (Z=2): done
+  C (Z=6): done
+  N (Z=7): done
+  O (Z=8): done
+  Ne (Z=10): done
+  Mg (Z=12): done
+  Si (Z=14): done
+  S (Z=16): done
+  Ca (Z=20): done
+  Fe (Z=26): done
+  Ni (Z=28): done
+
+--- Step 2: Line-only DN from checkpoint ---
+
+--- Step 3: Kappa continuum enhancement ---
+  kT_eff = 129.3 eV
+   94 Å: peak at 93.9 Å, E = 132.0 eV, κ/Mxw ff ratio = 0.786
+  131 Å: peak at 130.3 Å, E = 95.2 eV, κ/Mxw ff ratio = 1.006
+  171 Å: peak at 170.8 Å, E = 72.6 eV, κ/Mxw ff ratio = 1.225
+  193 Å: peak at 193.3 Å, E = 64.1 eV, κ/Mxw ff ratio = 1.332
+  211 Å: peak at 210.5 Å, E = 58.9 eV, κ/Mxw ff ratio = 1.408
+  335 Å: peak at 335.5 Å, E = 37.0 eV, κ/Mxw ff ratio = 1.835
+
+  Bandpass-integrated κ/Mxw free-free ratios:
+     94 Å: integrated κ/Mxw ratio = 0.785
+    131 Å: integrated κ/Mxw ratio = 1.005
+    171 Å: integrated κ/Mxw ratio = 1.235
+    193 Å: integrated κ/Mxw ratio = 1.329
+    211 Å: integrated κ/Mxw ratio = 1.405
+    335 Å: integrated κ/Mxw ratio = 1.802
+
+======================================================================
+CONTINUUM CONTRIBUTION SUMMARY
+======================================================================
+
+ Chan    Line Mxw      FF Mxw      FB Mxw   Cont/Line    κ/M ff      Cont κ
+---------------------------------------------------------------------------
+   94 Å   6.845e+00   2.478e-01   1.240e-01      5.432%     0.785   2.920e-01
+  131 Å   2.044e+01   3.350e+00   1.432e+00     23.393%     1.005   4.805e+00
+  171 Å   8.816e+02   3.203e+00   1.234e+00      0.503%     1.235   5.479e+00
+  193 Å   4.634e+03   5.653e+00   2.100e+00      0.167%     1.329   1.030e+01
+  211 Å   1.238e+03   3.864e+00   1.388e+00      0.424%     1.405   7.381e+00
+  335 Å   2.323e+01   1.379e-01   2.628e-02      0.706%     1.802   2.957e-01
+
+======================================================================
+IMPACT ON KAPPA DN AND chi-squared
+======================================================================
+
+ Chan   DN_κ (lines)    + cont κ    DN_κ total    Change
+-------------------------------------------------------
+   94 Å     1.3148e+00   2.920e-01    1.6068e+00    +22.2%
+  131 Å     5.6224e+00   4.805e+00    1.0427e+01    +85.5%
+  171 Å     3.1360e+02   5.479e+00    3.1908e+02     +1.7%
+  193 Å     5.4124e+02   1.030e+01    5.5155e+02     +1.9%
+  211 Å     9.5137e+01   7.381e+00    1.0252e+02     +7.8%
+  335 Å     3.2428e+00   2.957e-01    3.5385e+00     +9.1%
+
+--- Re-running DEM inversion with continuum-corrected DN ---
+Loading demregpy AIA response from: C:\Users\victo\AppData\Roaming\Python\Python310\site-packages\demregpy\tresp\aia_tresp_en.dat
+  Temperature grid: log T = 4.00 to 9.00, 101 points
+  Channels: ['A94', 'A131', 'A171', 'A193', 'A211', 'A335']
+
+Running DEM inversion...
+  Input DN: [  1.60679139  10.42698251 319.08186389 551.54569997 102.51832449
+   3.53847254]
+  Input errors: [ 1.54717585  2.58648708 11.17193242 13.57806999  5.70441638  1.44754998]
+  Temperature bins: 31 from log T = 5.7 to 7.2
+  χ² = 5.020
+  DN recovery: [0.72586101 0.62769194 0.94695311 0.87814052 1.05371867 1.09549546]
+
+  Original χ² (lines only):     7.588
+  Corrected χ² (lines + cont):  5.020
+  Original χ²/dof:              1.518
+  Corrected χ²/dof:             1.004
+
+  DN recovery with continuum:
+     94 Å: 0.726
+    131 Å: 0.628
+    171 Å: 0.947
+    193 Å: 0.878
+    211 Å: 1.054
+    335 Å: 1.095
+
+  Recovery range: 0.628 to 1.095
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+The continuum contribution is quantified as a fraction of line emission
+for each AIA channel. For channels where continuum is significant (94, 131),
+the kappa enhancement of the continuum (harder spectrum) adds additional
+DN that was missing from the lines-only computation.
+
+If the corrected chi-squared is LOWER than the original, the continuum
+correction IMPROVES the fit — meaning the lines-only result was
+conservative and the missing continuum was not hiding a problem.
+
+Results saved to: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Results\continuum_estimate_results.txt

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (too large for repo — see README)
+Data/
+kappa_v10.1/
+CHIANTI*/
+
+# Results that can be regenerated (keep text summaries)
+# Uncomment these if you want to exclude binary results:
+# Results/*.npz
+# Results/*.json
