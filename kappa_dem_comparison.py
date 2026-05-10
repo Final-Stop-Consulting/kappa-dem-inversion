@@ -363,7 +363,7 @@ def make_shape_detail_figure(kappa_dems, published_dems, save_prefix='dem_shape_
             dem_norm = np.where(valid, dem / np.max(dem[valid]), np.nan)
             ax.plot(logT, dem_norm, 'o-',
                     color='#377eb8', linewidth=2, markersize=5,
-                    label=r'Recovered: $\kappa=2.5$ ($\chi^2/\mathrm{dof}=1.52$)',
+                    label=r'Recovered: $\kappa=2.5$ ($\chi^2/\mathrm{dof}=1.00$)',
                     zorder=3)
 
             # Shade ±1σ error envelope if available
