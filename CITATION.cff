@@ -9,6 +9,10 @@ authors:
     email: vedmonds@finalstopconsulting.com
 repository-code: "https://github.com/Final-Stop-Consulting/kappa-dem-inversion"
 license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19188096"
+    description: "Concept DOI (always resolves to the latest version)"
 preferred-citation:
   type: article
   title: "The Quiet-Sun DEM Under Kappa: Diagnostic Degeneracy and a Closure-Corrected Coronal Energy Budget"

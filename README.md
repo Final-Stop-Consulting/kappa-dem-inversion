@@ -1,5 +1,7 @@
 # Kappa DEM Inversion Pipeline
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19188096.svg)](https://doi.org/10.5281/zenodo.19188096)
+
 Forward-modeling and DEM inversion code for the paper:
 
 > **The Quiet-Sun DEM Under Kappa: Diagnostic Degeneracy and a Closure-Corrected Coronal Energy Budget**
