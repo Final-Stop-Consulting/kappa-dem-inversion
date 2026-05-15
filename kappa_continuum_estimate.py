@@ -13,7 +13,7 @@ This script quantifies what's missing:
   5. Show the corrected χ² with continuum included
 
 The kappa free-free emissivity enhancement over Maxwellian at photon energy E is
-(Dudík et al. 2017, Eq. 4; see also Owocki & Scudder 1983):
+(Dudík et al. 2012, Eq. 4; see also Owocki & Scudder 1983):
 
   j_κ(E) / j_Mxw(E) = A_κ × [1 + E / ((κ - 3/2) k T_eff)]^{-(κ+1)}
                         / exp(-E / k T_eff)

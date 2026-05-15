@@ -73,7 +73,7 @@ Specific to the AIA-imaging analysis of this paper:
 ## Data dependencies (not in this repository)
 
 - **CHIANTI v11.0.2 atomic database** — [chiantidatabase.org](https://www.chiantidatabase.org/). Set the `XUVTOP` environment variable.
-- **Kappa ion fraction tables (Dz23 v10.1)** — [Dzifčáková et al. 2023](https://doi.org/10.3847/1538-4365/ac2aa7). Place in `Data/kappa_v10.1/` relative to the project root.
+- **Kappa ion fraction tables (Dz23 v10.1)** — [Dzifčáková et al. 2023, *ApJS* 269, 45](https://doi.org/10.3847/1538-4365/ad014d) (KAPPA package paper III). Place in `Data/kappa_v10.1/` relative to the project root.
 
 ## Requirements
 
@@ -141,8 +141,9 @@ The main pipeline takes ~15–20 minutes on first run (Stage 2 ion computation v
 ## References
 
 - Brooks, D. H., Warren, H. P., Williams, D. R., & Watanabe, T. 2009, *ApJ*, 705, 1522
-- Dere, K. P., Del Zanna, G., Young, P. R., & Landi, E. 2023, *ApJS*, 268, 52 (CHIANTI v11)
-- Dzifčáková, E., Dudík, J., & Zemanová, A. 2023, *ApJS*, 268, 52 (κ ion-fraction tables)
+- Dere, K. P., Del Zanna, G., Young, P. R., & Landi, E. 2023, *ApJS*, 268, 52 (CHIANTI v10.1)
+- Dufresne, R. P., Del Zanna, G., Young, P. R., et al. 2024, *ApJ*, 974, 71 (CHIANTI v11)
+- Dzifčáková, E., Dudík, J., Pavelková, J., Solarová, J., & Zemanová, A. 2023, *ApJS*, 269, 45 (κ ion-fraction tables)
 - Edmonds, V. 2026a, *Open Journal of Astrophysics*, 9, doi:10.33232/001c.161223 (κ ≈ 2.5 prior; falsifiable predictions)
 - Edmonds, V. 2026b, *Open Transport*, 1, 20260011, doi:10.1515/ot-2026-0011 (convergence theorem; bulk-temperature correction §4.2.5)
 - Hannah, I. G., & Kontar, E. P. 2012, *A&A*, 539, A146 (`demregpy`)
