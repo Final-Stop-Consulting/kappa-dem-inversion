@@ -17,6 +17,23 @@ This pipeline forward-models SDO/AIA EUV observations from a kappa-distributed p
 
 The κ ≈ 2.5 prior comes from [Edmonds 2026a, Open Journal of Astrophysics](https://doi.org/10.33232/001c.161223) (radio–EUV–density triple intersection); the bulk-temperature correction in §4.5 applies the SOL-context derivation of Edmonds 2026b §4.2.5 to the QS case.
 
+## For reviewers — verification map
+
+The repository is structured so that each numerical claim in the paper can be independently verified. The four most-testable claims (algorithmic FWHM floor, 131 Å free-bound shape stability, multi-T κ EM-loci collapse, multi-T κ FWHM) require only `numpy<2.0`, `scipy`, and `demregpy` from PyPI plus committed checkpoint files — no atomic-database installation needed. The full 5-stage Stage-2 pipeline (which produces the per-ion contributions) requires CHIANTI v11 installed but its checkpoint is committed so downstream verification does not require re-running it.
+
+| Paper claim | Section | Script | Result file | Dependencies | Time |
+|---|---|---|---|---|---|
+| Algorithmic FWHM floor 0.174 | §3.4, Table 4 | `isothermal_mxw_baseline.py` | `Results/isothermal_mxw_baseline_results.txt` | numpy<2 + scipy + demregpy | ~10 s |
+| 131 Å DN-shape stability under 3× inflation | §2.3 | `freebound_131_sensitivity.py` | `Results/freebound_131_sensitivity_results.npz` | numpy<2 + scipy + demregpy + committed κ=2.5 DN vector | ~10 s |
+| Multi-T κ EM-loci collapse 0.14 dex (14% of single-T tilt) | §3.6 | `em_loci_multi_thermal_kappa.py` | `Results/em_loci_multi_thermal_kappa_results.npz` | numpy + Dz23 ion-fraction tables | ~5 s |
+| Multi-T κ recovered FWHM 0.305 | §3.4 | `multi_thermal_kappa_test.py` | `Results/multi_thermal_kappa_results.npz` | numpy<2 + scipy + demregpy + Dz23 tables + committed per-ion checkpoint | ~30 s |
+| Single-T κ recovered FWHM 0.222, χ²/dof = 1.00 | §3.3 | `kappa_dem_pipeline.py` | `Results/kappa_dem_inversion_results.npz` | full pipeline: ChiantiPy + CHIANTI v11 + Dz23 tables | ~15–20 min first run |
+| κ sensitivity sweep (κ = 2, 2.5, 3) | §3.4 | `kappa_sensitivity_tests.py` | `Results/kappa_sensitivity_results.npz` | reuses per-ion checkpoint (committed) | ~1 min |
+| Continuum κ/Mxw ratios + 131 Å free-bound | §2.3 | `kappa_continuum_estimate.py` | `Results/continuum_estimate_results.txt` | ChiantiPy + CHIANTI v11 | ~2 min |
+| DEM shape vs Brooks 2009 + published QS DEMs | §3.5 | `kappa_dem_comparison.py` | `Results/dem_comparison_results.txt` | numpy + matplotlib | ~30 s |
+
+The pipeline is implemented entirely in Python; no IDL or SolarSoft installation is required.
+
 ## Pipeline stages
 
 1. **Ion fraction loading** — Read κ ion fractions from Dzifčáková et al. (2023) v10.1 tables and matched Maxwellian fractions on the same atomic-data basis.
@@ -45,7 +62,7 @@ The κ ≈ 2.5 prior comes from [Edmonds 2026a, Open Journal of Astrophysics](ht
 | Isothermal Maxwellian (algorithmic floor) | 0.174 | 6.15 | — |
 | κ = 3 single-T | 0.191 | 6.18 | 1.02 |
 | κ = 2.5 single-T (lines + continuum) | **0.222** | 6.18 | **1.00** |
-| Multi-T κ = 2.5 (Brooks shape) | 0.305 | 5.98 | 0.76 |
+| Multi-T κ = 2.5 (Brooks shape) | 0.305 | 5.98 | 0.17 |
 | Brooks-shape Maxwellian (multi-T forward) | 0.319 | 5.95 | — |
 | κ = 2 single-T | 0.353 | 6.03 | 3.49 |
 | Real-QS distribution (80 patches, 2019-12-01) | 0.229–0.383 (median 0.277) | 5.97 (median) | 1.00 |

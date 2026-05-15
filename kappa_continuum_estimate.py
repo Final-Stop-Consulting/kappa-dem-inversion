@@ -245,8 +245,8 @@ def main():
                                 ea_interp = np.interp(wvl_grid, aia_wvl[chan], aia_ea[chan])
                                 dn_ff = np.trapz(ff_intensity * ea_interp, wvl_grid)
                                 cont_dn_ff[chan] += dn_ff
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"SKIP freeFree {ion_str}: {e}")
 
                 # Free-bound
                 try:
@@ -258,10 +258,11 @@ def main():
                                 ea_interp = np.interp(wvl_grid, aia_wvl[chan], aia_ea[chan])
                                 dn_fb = np.trapz(fb_intensity * ea_interp, wvl_grid)
                                 cont_dn_fb[chan] += dn_fb
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"SKIP freeBound {ion_str}: {e}")
 
             except Exception as e:
+                print(f"SKIP continuum {ion_str}: {e}")
                 continue
 
         print(f"  {el_name} (Z={z}): done")

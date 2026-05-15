@@ -159,7 +159,7 @@ def load_brooks_dem(path):
 
 def main():
     log_path = RESULTS_DIR / 'em_loci_multi_thermal_kappa_results.txt'
-    log_f = open(log_path, 'w')
+    log_f = open(log_path, 'w', encoding='utf-8')
 
     def log(*a):
         msg = ' '.join(str(x) for x in a)
@@ -248,6 +248,9 @@ def main():
     log(f'  Multi-T (DEM-weighted):   '
         f'log(M/k) range = [{log_ratio_multi.min():.3f}, {log_ratio_multi.max():.3f}]; '
         f'spread = {log_ratio_multi.max() - log_ratio_multi.min():.3f} dex')
+    log(f'  (single-T value above is the f_M/f_k ratio spread, NOT the paper')
+    log(f'   Table 6 EM-loci tilt of 1.060 dex; the 14% collapse statistic')
+    log(f'   below is computed against the Table 6 amplitude, not this value)')
 
     # Sanity check: single-T M/k at T_eff against paper Table 6 f_k/f_M values
     log('\nSingle-T ratio M/k consistency check against paper Table 6 f_k/f_M:')
@@ -267,6 +270,28 @@ def main():
     log(f'Multi-T compute spread:        {multi_spread:.3f} dex')
     log(f'Multi-T / single-T spread:     {multi_spread/paper_spread*100:.1f}%')
     log(f'(Paper Section 3.6 reports 14% based on the v2-corrected single-T amplitude)')
+
+    # ---- Sensitivity test (prior-audit Issue 9): Fe XVI proxy edge case.
+    # Fe XVI 335.41 forms at log T ~6.4, where the Brooks DEM has minimal
+    # weight (Brooks peaks at log T = 6.05). The DEM-weighted ion-fraction
+    # proxy is least reliable at the line set's hot endpoint. Drop Fe XVI
+    # and re-compute the multi-T spread to check whether the 14% headline
+    # statistic is dominated by the proxy's weakest point.
+    log('\n' + '-' * 72)
+    log('Fe XVI exclusion sensitivity (proxy edge-case check)')
+    log('-' * 72)
+    mask_no_fe16 = np.array([l[0] != 'Fe XVI' for l in LINES])
+    log_ratio_multi_no_fe16 = log_ratio_multi[mask_no_fe16]
+    multi_spread_no_fe16 = (log_ratio_multi_no_fe16.max()
+                             - log_ratio_multi_no_fe16.min())
+    delta = abs(multi_spread_no_fe16 - multi_spread)
+    log(f'  Multi-T spread (all 8 lines):       {multi_spread:.3f} dex')
+    log(f'  Multi-T spread (Fe IX-XV, no XVI):  {multi_spread_no_fe16:.3f} dex')
+    log(f'  Change from dropping Fe XVI:        {delta:.3f} dex')
+    if delta < 0.02:
+        log(f'  -> headline result is robust (delta < 0.02 dex)')
+    else:
+        log(f'  -> WARNING: Fe XVI dominates the spread (delta >= 0.02 dex)')
 
     np.savez(RESULTS_DIR / 'em_loci_multi_thermal_kappa_results.npz',
              line_labels=np.array(line_labels),

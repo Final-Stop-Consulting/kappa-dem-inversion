@@ -15,12 +15,12 @@ single-T kappa = 2.5 131 A DN by 2x and 3x — generous upper bounds on what a
 fully resolved per-ion free-bound treatment could plausibly add — and re-run
 demregpy with the same temperature response and shot+read noise model.
 
-Result reported in paper Section 2.3:
+Result reported in paper Section 2.3 (under the dn2ph-corrected noise model):
     - Peak log T unchanged at 6.150 across nominal, 2x, 3x
-    - FWHM stable to within +/- 0.005 dex (0.226 -> 0.223 -> 0.221)
+    - FWHM stable to within +/- 0.005 dex
     - No secondary artifact spike at the 131 A peak formation temperature
-    - chi^2/dof barely shifts (1.50 -> 1.45 -> 1.49, lines-only)
-    - 131 A per-channel recovery drops 97% -> 51% as the pipeline absorbs the
+    - chi^2/dof shifts by less than 0.1 across the 3x inflation (lines-only)
+    - 131 A per-channel recovery drops ~96% -> ~47% as the pipeline absorbs the
       inflated DN by reducing per-channel recovery rather than warping the DEM
 
 Dependencies: numpy<2.0, scipy, demregpy. Reads the kappa=2.5 DN vector from
@@ -56,11 +56,19 @@ DEM_DLOGT = 0.05
 
 
 def compute_aia_noise(dn, exposure=2.9):
-    """Shot + read noise (matching kappa_dem_pipeline.compute_aia_noise)."""
+    """Shot + read noise matching kappa_dem_pipeline.compute_aia_noise.
+
+    Uses the AIA dn2ph (DN-per-photon) conversion so the Poisson sqrt is taken
+    on photon counts, not DN counts. dn2ph = gains * chan_wvl / 3397; shotnoise
+    on DN/s is sqrt(dn2ph * DN_total) / dn2ph / exposure_time.
+    """
+    gains = np.array([18.3, 17.6, 17.7, 18.3, 18.3, 17.6])
+    chan_wvl = np.array([94, 131, 171, 193, 211, 335])
+    dn2ph = gains * chan_wvl / 3397.0
     rdnse = np.array([1.14, 1.18, 1.15, 1.20, 1.20, 1.18])
-    counts = dn * exposure
-    photon = np.sqrt(np.maximum(counts, 0)) / exposure
-    return np.sqrt(photon**2 + rdnse**2)
+    dn_total = dn * exposure
+    shotnoise = np.sqrt(dn2ph * np.abs(dn_total)) / dn2ph / exposure
+    return np.sqrt(rdnse**2 + shotnoise**2)
 
 
 def interp_edge(x0, x1, y0, y1, y):
@@ -136,7 +144,7 @@ def shape_report(log_f, label, dem, log_T_centers, chisq, dn, dn_reg):
 
 def main():
     log_path = RESULTS_DIR / 'freebound_131_sensitivity_results.txt'
-    log_f = open(log_path, 'w')
+    log_f = open(log_path, 'w', encoding='utf-8')
 
     def log(*a):
         msg = ' '.join(str(x) for x in a)

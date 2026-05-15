@@ -27,6 +27,9 @@ SPREAD COMPARISON (log10 across the 8 lines)
 ------------------------------------------------------------------------
   Single-T at T_eff:        log(M/k) range = [-0.492, 0.208]; spread = 0.700 dex
   Multi-T (DEM-weighted):   log(M/k) range = [-0.091, 0.052]; spread = 0.144 dex
+  (single-T value above is the f_M/f_k ratio spread, NOT the paper
+   Table 6 EM-loci tilt of 1.060 dex; the 14% collapse statistic
+   below is computed against the Table 6 amplitude, not this value)
 
 Single-T ratio M/k consistency check against paper Table 6 f_k/f_M:
     Line   this M/k(Teff)   paper f_k/f_M     -> M/k
@@ -43,6 +46,14 @@ Paper Table 6 single-T spread: 1.060 dex (across 25.87-26.93)
 Multi-T compute spread:        0.144 dex
 Multi-T / single-T spread:     13.6%
 (Paper Section 3.6 reports 14% based on the v2-corrected single-T amplitude)
+
+------------------------------------------------------------------------
+Fe XVI exclusion sensitivity (proxy edge-case check)
+------------------------------------------------------------------------
+  Multi-T spread (all 8 lines):       0.144 dex
+  Multi-T spread (Fe IX-XV, no XVI):  0.101 dex
+  Change from dropping Fe XVI:        0.042 dex
+  -> WARNING: Fe XVI dominates the spread (delta >= 0.02 dex)
 
 Numerical output saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Results/em_loci_multi_thermal_kappa_results.npz
 Figure saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Figures/em_loci_multi_thermal_kappa.{png,pdf}

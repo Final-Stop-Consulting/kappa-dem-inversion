@@ -27,3 +27,5 @@ CHIANTI*/
 Results/*.npz
 Results/*.json
 Figures/
+# Claude Code verification metadata
+.claude/
