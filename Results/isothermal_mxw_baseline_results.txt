@@ -1,0 +1,20 @@
+Isothermal Maxwellian (no kappa) DN/s/px at log T = 6.176:
+    94 A: DN =     9.5955e-01, edn = 1.2769e+00, frac = 1.331
+   131 A: DN =     3.1747e+00, edn = 1.5771e+00, frac = 0.497
+   171 A: DN =     1.1810e+02, edn = 6.4844e+00, frac = 0.055
+   193 A: DN =     6.3849e+02, edn = 1.4887e+01, frac = 0.023
+   211 A: DN =     1.2946e+02, edn = 6.7882e+00, frac = 0.052
+   335 A: DN =     3.4189e+00, edn = 1.6035e+00, frac = 0.469
+
+Isothermal Maxwellian (no kappa) recovered DEM:
+  peak log T = 6.150
+  FWHM (log T) = 0.174
+  chi^2/dof = 32.137
+
+For comparison:
+  kappa=3 recovered:    FWHM 0.191
+  kappa=2.5 recovered:  FWHM 0.222
+  kappa=2 recovered:    FWHM 0.353
+  Brooks-shape Mxw:     FWHM 0.319 (multi-T)
+  Multi-T kappa=2.5:    FWHM 0.305
+  Real-QS distribution: 0.229-0.383 (median 0.277)

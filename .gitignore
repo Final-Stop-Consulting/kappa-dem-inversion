@@ -24,5 +24,6 @@ CHIANTI*/
 
 # Results that can be regenerated (keep text summaries)
 # Uncomment these if you want to exclude binary results:
-# Results/*.npz
-# Results/*.json
+Results/*.npz
+Results/*.json
+Figures/

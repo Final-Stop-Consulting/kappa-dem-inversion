@@ -1,22 +1,40 @@
 #!/usr/bin/env python3
 """
-Multi-thermal kappa test (R1 #1).
+Multi-thermal kappa test (paper Section 3.4).
 
-Forward-model a multi-T kappa source through the AIA pipeline:
-  - DEM(T) = Brooks 2009 quiet_sun_eis.dem shape
+Forward-models a multi-thermal kappa source through the demregpy AIA pipeline:
+  - DEM(T) = Brooks 2009 quiet_sun_eis.dem reference shape
   - Ion populations at each T set by Dz23 v10.1 kappa=2.5 ion fractions
-  - Per-ion AIA channel contributions taken from the existing single-T
-    checkpoint, with the ion-intrinsic emissivity factored out via the
-    sec:perion factorization (eq. 2 of the paper):
-        DN_i^kappa = sum_ions DN_i,ion^Mxw(T_eff) * f^kappa(T)/f^Mxw(T_eff)
+  - Per-ion AIA channel contributions taken from the existing per-ion T_eff
+    checkpoint (kappa_dem_pipeline.py Stage 2), with the ion-intrinsic
+    emissivity factored out via the Section 2.2 factorization (paper Eq. 2):
+        DN_i^kappa(T) = sum_ions DN_i,ion^Mxw(T_eff) * f^kappa(ion, T) / f^Mxw(ion, T_eff)
 
-Run synthetic DN through demregpy. Report FWHM, peak T, chi^2/dof.
+Runs the synthetic multi-T kappa DN through demregpy with the same Maxwellian
+response functions used by the single-T tests and the real-data 80-patch run.
 
-Compare:
-  - Single-T kappa  (existing) FWHM 0.222
-  - Brooks-shape Mxw forward   FWHM 0.326
-  - Multi-T kappa  (this test) FWHM ?
-  - Real-QS distribution       FWHM 0.229--0.383 (median 0.277)
+Used in paper Section 3.4 to verify the convergence-theorem prediction
+across three source families:
+    Single-T kappa=2.5 recovered:       FWHM 0.222
+    Brooks-shape Maxwellian forward:    FWHM 0.319
+    Multi-T kappa=2.5 (this script):    FWHM 0.305
+    Real-QS distribution (median):      0.277 (range 0.229-0.383)
+
+Dependencies: numpy<2.0, scipy, demregpy. Reads the per-ion checkpoint at
+Analysis/Results/ion_contributions_checkpoint.json (produced by
+kappa_dem_pipeline.py); does NOT require running ChiantiPy directly.
+
+The factorization assumes ion-intrinsic emissivity (line strength times
+wavelength response) is approximately T-independent near each ion's
+formation temperature. This holds well for the AIA channels whose dominant
+ions have formation T near T_eff = 1.5 MK (171, 193, 211, 335); the 94 A
+channel's hot Fe XVIII contribution at log T ~6.85 is under-represented
+because the checkpoint was evaluated at log T = 6.176. 94 A has the highest
+fractional noise in the inversion and contributes minimally to the recovered
+FWHM, so the result is robust to this approximation.
+
+Usage:
+    python multi_thermal_kappa_test.py
 """
 
 import os, sys, json, time
@@ -25,10 +43,10 @@ import scipy.io as sio
 from pathlib import Path
 
 # ---- paths (resolve relative to this script: Analysis/multi_thermal_kappa_test.py)
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_DIR / 'Data'
 KAPPA_DIR = DATA_DIR / 'kappa_v10.1'
-RESULTS_DIR = PROJECT_DIR / 'Analysis' / 'Results'
+RESULTS_DIR = PROJECT_DIR / 'Results'
 OUT_DIR = RESULTS_DIR
 OUT_DIR.mkdir(exist_ok=True, parents=True)
 
@@ -159,7 +177,7 @@ def main():
         log_f.flush()
 
     log('=' * 70)
-    log('Multi-thermal kappa test (R1 #1)')
+    log('Multi-thermal kappa test (paper Section 3.4)')
     log('=' * 70)
 
     # ---- load demregpy AIA response
@@ -422,4 +440,11 @@ def main():
     log('\nFor comparison:')
     log('  Single-T kappa=2.5 (existing):  FWHM 0.222')
     log('  Brooks-shape Mxw forward:       FWHM 0.326')
-    log('  Real-QS distribution:           FWHM 0.229-0.383 (median 0.277)
+    log('  Real-QS distribution:           FWHM 0.229-0.383 (median 0.277)')
+
+    log_f.close()
+    return {'fwhm': fwhm, 'peak_logT': peak_logT, 'chisq': chisq}
+
+
+if __name__ == '__main__':
+    main()

@@ -49,11 +49,11 @@ class Tee:
 if 'HOME' not in os.environ:
     os.environ['HOME'] = os.path.expanduser('~')
 
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_DIR / 'Data'
 KAPPA_DIR = DATA_DIR / 'kappa_v10.1'
-RESULTS_DIR = PROJECT_DIR / 'Analysis' / 'Results'
-FIGURES_DIR = PROJECT_DIR / 'Analysis' / 'Figures'
+RESULTS_DIR = PROJECT_DIR / 'Results'
+FIGURES_DIR = PROJECT_DIR / 'Figures'
 
 XUVTOP = str(DATA_DIR / 'CHIANTI_11.0.2_database')
 os.environ['XUVTOP'] = XUVTOP

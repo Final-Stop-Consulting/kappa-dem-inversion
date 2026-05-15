@@ -2,6 +2,8 @@ cff-version: 1.2.0
 title: "Kappa DEM Inversion Pipeline"
 message: "If you use this software, please cite the associated paper."
 type: software
+version: "1.0.0"
+date-released: "2026-05-15"
 authors:
   - family-names: Edmonds
     given-names: Victor

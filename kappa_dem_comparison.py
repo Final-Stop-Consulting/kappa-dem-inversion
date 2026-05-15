@@ -41,7 +41,7 @@ import os
 SCRIPT_DIR = Path(__file__).resolve().parent
 RESULTS_DIR = SCRIPT_DIR / 'Results'
 FIGURES_DIR = SCRIPT_DIR / 'Figures'
-CHIANTI_DEM_DIR = SCRIPT_DIR.parent / 'Data' / 'CHIANTI_11.0.2_database' / 'dem'
+CHIANTI_DEM_DIR = SCRIPT_DIR / 'Data' / 'CHIANTI_11.0.2_database' / 'dem'
 
 FIGURES_DIR.mkdir(exist_ok=True)
 RESULTS_DIR.mkdir(exist_ok=True)

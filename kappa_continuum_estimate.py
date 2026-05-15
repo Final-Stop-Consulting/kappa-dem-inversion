@@ -42,7 +42,7 @@ if 'HOME' not in os.environ:
     os.environ['HOME'] = os.path.expanduser('~')
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-XUVTOP = str(SCRIPT_DIR.parent / 'Data' / 'CHIANTI_11.0.2_database')
+XUVTOP = str(SCRIPT_DIR / 'Data' / 'CHIANTI_11.0.2_database')
 os.environ['XUVTOP'] = XUVTOP
 
 RESULTS_DIR = SCRIPT_DIR / 'Results'

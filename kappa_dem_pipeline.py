@@ -68,15 +68,15 @@ if 'HOME' not in os.environ:
 # ============================================================================
 
 # CHIANTI database path — v11.0.2 in the project Data folder
-XUVTOP = str(Path(__file__).resolve().parent.parent / 'Data' / 'CHIANTI_11.0.2_database')
+XUVTOP = str(Path(__file__).resolve().parent / 'Data' / 'CHIANTI_11.0.2_database')
 os.environ['XUVTOP'] = XUVTOP  # Set early so ChiantiPy finds it on import
 
 # Project data directories
-PROJECT_DIR = Path(__file__).resolve().parent.parent
+PROJECT_DIR = Path(__file__).resolve().parent
 DATA_DIR = PROJECT_DIR / 'Data'
 KAPPA_DIR = DATA_DIR / 'kappa_v10.1'
-RESULTS_DIR = PROJECT_DIR / 'Analysis' / 'Results'
-FIGURES_DIR = PROJECT_DIR / 'Analysis' / 'Figures'
+RESULTS_DIR = PROJECT_DIR / 'Results'
+FIGURES_DIR = PROJECT_DIR / 'Figures'
 
 # Physical parameters
 KAPPA = 2.5
