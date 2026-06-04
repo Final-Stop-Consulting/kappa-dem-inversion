@@ -1,0 +1,9 @@
+{
+  "r": 0.4,
+  "naive_factor": 0.04047715405015526,
+  "Tmax_rise_float": 1.7065997266133561,
+  "apex_Teff_float_MK": 2.5598995899200343,
+  "Fc_float_over_std": 0.26282751004429056,
+  "reduction_fixed_pct": 47.30152306332297,
+  "reduction_float_pct": 32.47816599704729
+}

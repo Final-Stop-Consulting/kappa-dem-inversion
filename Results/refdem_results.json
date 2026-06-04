@@ -1,0 +1,136 @@
+{
+  "description": "Reference-DEM robustness (R4.4); same pipeline as multi_thermal_kappa_test.py",
+  "qs_band": [
+    0.23,
+    0.401
+  ],
+  "qs_median": 0.283,
+  "gate_pass": true,
+  "gate_mxw_fwhm": 0.3218,
+  "gate_kappa_fwhm": 0.3075,
+  "dem_grid": "10**arange(5.7,7.2+0.05,0.05)",
+  "inputs_dir": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems",
+  "n_user_dem_processed": 4,
+  "results": {
+    "Brooks2009_quiet_sun_eis": {
+      "mxw": {
+        "fwhm": 0.3218,
+        "peak_logT": 5.975,
+        "chi2dof": 0.1853,
+        "chisq_raw": 0.9266
+      },
+      "kappa": {
+        "fwhm": 0.3075,
+        "peak_logT": 5.975,
+        "chi2dof": 0.1715,
+        "chisq_raw": 0.8577
+      },
+      "input_peak_logT": 6.05,
+      "grid_bins_in_range": 23,
+      "role": "GATE",
+      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\CHIANTI_11.0.2_database\\dem\\quiet_sun_eis.dem",
+      "mxw_in_band": true,
+      "kappa_in_band": true
+    },
+    "CHIANTI_quiet_sun": {
+      "mxw": {
+        "fwhm": 0.3874,
+        "peak_logT": 5.975,
+        "chi2dof": 0.1703,
+        "chisq_raw": 0.8513
+      },
+      "kappa": {
+        "fwhm": 0.3781,
+        "peak_logT": 5.975,
+        "chi2dof": 0.15,
+        "chisq_raw": 0.7501
+      },
+      "input_peak_logT": 6.0,
+      "grid_bins_in_range": 19,
+      "role": "reference",
+      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\CHIANTI_11.0.2_database\\dem\\quiet_sun.dem",
+      "mxw_in_band": true,
+      "kappa_in_band": true
+    },
+    "delzanna2018_rd81": {
+      "mxw": {
+        "fwhm": 0.4118,
+        "peak_logT": 5.975,
+        "chi2dof": 0.1829,
+        "chisq_raw": 0.9144
+      },
+      "kappa": {
+        "fwhm": 0.3989,
+        "peak_logT": 5.975,
+        "chi2dof": 0.1725,
+        "chisq_raw": 0.8627
+      },
+      "input_peak_logT": 6.0,
+      "grid_bins_in_range": 21,
+      "role": "user",
+      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\delzanna2018_rd81.dem",
+      "mxw_in_band": false,
+      "kappa_in_band": true
+    },
+    "delzanna2018_rd81_raw": {
+      "mxw": {
+        "fwhm": 0.5219,
+        "peak_logT": 6.175,
+        "chi2dof": 0.0969,
+        "chisq_raw": 0.4847
+      },
+      "kappa": {
+        "fwhm": 0.4094,
+        "peak_logT": 6.125,
+        "chi2dof": 0.215,
+        "chisq_raw": 1.0751
+      },
+      "input_peak_logT": 6.15,
+      "grid_bins_in_range": 21,
+      "role": "user",
+      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\delzanna2018_rd81_raw.dem",
+      "mxw_in_band": false,
+      "kappa_in_band": false
+    },
+    "landi_feldman_2008": {
+      "mxw": {
+        "fwhm": 0.1752,
+        "peak_logT": 6.175,
+        "chi2dof": 0.4457,
+        "chisq_raw": 2.2285
+      },
+      "kappa": {
+        "fwhm": 0.2615,
+        "peak_logT": 6.125,
+        "chi2dof": 0.6268,
+        "chisq_raw": 3.1342
+      },
+      "input_peak_logT": 6.15,
+      "grid_bins_in_range": 10,
+      "role": "user",
+      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\landi_feldman_2008.dem",
+      "mxw_in_band": false,
+      "kappa_in_band": true
+    },
+    "warren_brooks_2009": {
+      "mxw": {
+        "fwhm": 0.3382,
+        "peak_logT": 5.975,
+        "chi2dof": 0.7859,
+        "chisq_raw": 3.9295
+      },
+      "kappa": {
+        "fwhm": 0.3203,
+        "peak_logT": 5.975,
+        "chi2dof": 0.6906,
+        "chisq_raw": 3.4529
+      },
+      "input_peak_logT": 6.05,
+      "grid_bins_in_range": 14,
+      "role": "user",
+      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\warren_brooks_2009.dem",
+      "mxw_in_band": true,
+      "kappa_in_band": true
+    }
+  }
+}

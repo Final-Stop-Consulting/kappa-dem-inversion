@@ -1,0 +1,35 @@
+DEM-inversion regularization (reg_tweak) sensitivity sweep
+demregpy 0.6.2 | dn2dem reg_tweak = target reduced chi^2 (Morozov discrepancy)
+temps: 10**arange(5.7,7.25,0.05) -> 31 edges, 30 DEM bins; DOF=5 (6 chan -1)
+noise: kp.compute_aia_noise (shot+read, dn2ph corrected, exp=2.9s)
+
+GATE CHECK at reg_tweak=1.0 (must match published FWHM within +/-0.005):
+  single-T kappa=2.5     FWHM=0.2223  published=0.222  diff=+0.0003  PASS
+  multi-T kappa=2.5      FWHM=0.3078  published=0.305  diff=+0.0028  PASS
+  Brooks-Mxw forward     FWHM=0.3223  published=0.319  diff=+0.0033  PASS
+  isothermal Mxw         FWHM=0.1760  published=0.174  diff=+0.0020  PASS
+
+family                 reg_tweak       chi2   chi2/dof  peak_logT     FWHM
+--------------------------------------------------------------------------
+single-T kappa=2.5           0.5     8.4305     1.6861     6.1750   0.2254
+single-T kappa=2.5           1.0     7.5877     1.5175     6.1750   0.2223
+single-T kappa=2.5           2.0     6.9337     1.3867     6.1750   0.2197
+--------------------------------------------------------------------------
+multi-T kappa=2.5            0.5     0.7606     0.1521     5.9750   0.3074
+multi-T kappa=2.5            1.0     0.9762     0.1952     5.9750   0.3078
+multi-T kappa=2.5            2.0     2.0530     0.4106     5.9750   0.3101
+--------------------------------------------------------------------------
+Brooks-Mxw forward           0.5     0.7529     0.1506     5.9750   0.3215
+Brooks-Mxw forward           1.0     0.9572     0.1914     5.9750   0.3223
+Brooks-Mxw forward           2.0     2.0125     0.4025     5.9750   0.3252
+--------------------------------------------------------------------------
+isothermal Mxw               0.5    18.7490     3.7498     6.1750   0.1669
+isothermal Mxw               1.0    38.0140     7.6028     6.1750   0.1760
+isothermal Mxw               2.0    33.7110     6.7422     6.1750   0.1748
+--------------------------------------------------------------------------
+
+FWHM stability across 0.5x-2x reg_tweak (max|dFWHM| per family):
+  single-T kappa=2.5     max|dFWHM| = 0.0057
+  multi-T kappa=2.5      max|dFWHM| = 0.0027
+  Brooks-Mxw forward     max|dFWHM| = 0.0037
+  isothermal Mxw         max|dFWHM| = 0.0092

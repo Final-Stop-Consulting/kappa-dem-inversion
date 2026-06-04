@@ -1,0 +1,27 @@
+% RAW-AXIS VARIANT -- sensitivity bound ONLY. The raw reading (axis values used directly as
+% log DEM) is EXCLUDED as a physical interpretation by RD81 Eq. 1, which defines the plotted
+% quantity as int N_e^2 dh over Delta log T = 0.1 bins (=> the -logT tilt of the primary file).
+% Retained to bracket conversion sensitivity in the R4.4 robustness table footnote.
+% source/knots/verification: see delzanna2018_rd81.dem header.
+% units: log10 T [K]   log10[int Ne^2 dh] as plotted (NOT DEM per K)
+  4.10    27.5500
+  4.40    27.1000
+  4.80    25.9500
+  5.00    25.1000
+  5.05    24.9400
+  5.20    25.0000
+  5.40    25.3500
+  5.60    25.7000
+  5.70    25.8800
+  5.80    26.0500
+  5.90    26.2000
+  6.00    26.3300
+  6.10    26.4300
+  6.15    26.4500
+  6.20    26.4300
+  6.30    26.2500
+  6.40    26.1000
+  6.50    26.0000
+  6.60    25.9200
+  6.70    25.8800
+ -1

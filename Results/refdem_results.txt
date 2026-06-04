@@ -1,0 +1,73 @@
+==========================================================================
+Reference-DEM robustness runner (R4.4)
+Same pipeline as multi_thermal_kappa_test.py, arbitrary reference DEM
+==========================================================================
+Real-QS FWHM band: 0.23-0.401 (median 0.283)
+
+Building DEM-independent forward model (response + factorized ion responses)...
+  forward model built: 164 ions, DEM grid log T 5.70-7.20 (n=31)
+
+--------------------------------------------------------------------------
+[GATE] Brooks2009_quiet_sun_eis
+  path: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\CHIANTI_11.0.2_database\dem\quiet_sun_eis.dem
+  loaded Brooks2009_quiet_sun_eis: knots log T 5.40-6.80, 23/31 grid bins in range, input-DEM peak log T 6.050
+    [  mxw] FWHM = 0.322, peak log T = 5.975, chi2/dof = 0.185
+    [kappa] FWHM = 0.308, peak log T = 5.975, chi2/dof = 0.172
+  GATE check: Mxw 0.322 (target 0.319+-0.01), kappa 0.307 (target 0.305+-0.01) -> PASS
+
+--------------------------------------------------------------------------
+[reference] CHIANTI_quiet_sun
+  path: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\CHIANTI_11.0.2_database\dem\quiet_sun.dem
+  loaded CHIANTI_quiet_sun: knots log T 4.00-6.60, 19/31 grid bins in range, input-DEM peak log T 6.000
+    [  mxw] FWHM = 0.387, peak log T = 5.975, chi2/dof = 0.170
+    [kappa] FWHM = 0.378, peak log T = 5.975, chi2/dof = 0.150
+
+--------------------------------------------------------------------------
+[user] delzanna2018_rd81
+  path: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\reference_dems\delzanna2018_rd81.dem
+  loaded delzanna2018_rd81: knots log T 4.10-6.70, 21/31 grid bins in range, input-DEM peak log T 6.000
+    [  mxw] FWHM = 0.412, peak log T = 5.975, chi2/dof = 0.183
+    [kappa] FWHM = 0.399, peak log T = 5.975, chi2/dof = 0.173
+
+--------------------------------------------------------------------------
+[user] delzanna2018_rd81_raw
+  path: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\reference_dems\delzanna2018_rd81_raw.dem
+  loaded delzanna2018_rd81_raw: knots log T 4.10-6.70, 21/31 grid bins in range, input-DEM peak log T 6.150
+    [  mxw] FWHM = 0.522, peak log T = 6.175, chi2/dof = 0.097
+    [kappa] FWHM = 0.409, peak log T = 6.125, chi2/dof = 0.215
+
+--------------------------------------------------------------------------
+[user] landi_feldman_2008
+  path: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\reference_dems\landi_feldman_2008.dem
+  loaded landi_feldman_2008: knots log T 5.90-6.40, 10/31 grid bins in range, input-DEM peak log T 6.150
+    [  mxw] FWHM = 0.175, peak log T = 6.175, chi2/dof = 0.446
+    [kappa] FWHM = 0.262, peak log T = 6.125, chi2/dof = 0.627
+
+--------------------------------------------------------------------------
+[user] warren_brooks_2009
+  path: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\reference_dems\warren_brooks_2009.dem
+  loaded warren_brooks_2009: knots log T 5.60-6.38, 14/31 grid bins in range, input-DEM peak log T 6.050
+    [  mxw] FWHM = 0.338, peak log T = 5.975, chi2/dof = 0.786
+    [kappa] FWHM = 0.320, peak log T = 5.975, chi2/dof = 0.691
+
+==========================================================================
+SUMMARY TABLE
+==========================================================================
+reference DEM                  role        Mxw_FWHM  Mxw_pk  Mxw_x2  kap_FWHM  kap_pk  kap_x2  both_in_band
+-----------------------------------------------------------------------------------------------------------
+Brooks2009_quiet_sun_eis       GATE           0.322   5.975   0.185     0.307   5.975   0.172           YES
+CHIANTI_quiet_sun              reference      0.387   5.975   0.170     0.378   5.975   0.150           YES
+delzanna2018_rd81              user           0.412   5.975   0.183     0.399   5.975   0.172            NO
+delzanna2018_rd81_raw          user           0.522   6.175   0.097     0.409   6.125   0.215            NO
+landi_feldman_2008             user           0.175   6.175   0.446     0.262   6.125   0.627            NO
+warren_brooks_2009             user           0.338   5.975   0.786     0.320   5.975   0.691           YES
+
+==========================================================================
+CONCLUSION
+==========================================================================
+Brooks validation gate: PASS (Mxw 0.322 / target 0.319; kappa 0.307 / target 0.305)
+Both-in-band for 3/6 references; outside band: ['delzanna2018_rd81', 'delzanna2018_rd81_raw', 'landi_feldman_2008']
+
+Wrote C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Results\refdem_results.txt
+Wrote C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Results\refdem_results.json
+User-DEM drop folder (auto-processed): C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Data\reference_dems  (found 4 *.dem this run)

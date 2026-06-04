@@ -1,0 +1,44 @@
+========================================================================
+AIA 80-PATCH DEM ANALYSIS - REBUILD FOR PEER-REVIEW REVISION
+========================================================================
+
+METHOD
+------------------------------------------------------------------------
+  Series: aia.lev1_euv_12s (drms JSOC client, as-is segment URLs)
+  Channels: 94,131,171,193,211,335 A  (one image/channel ~12:00 TAI)
+  Register -> level 1.5 via aiapy.calibrate.register
+    (update_pointing SKIPPED, degradation correction SKIPPED -> no net calib)
+  Normalize: DN/s/px = data / EXPTIME (per-channel exposure)
+  Patches: 100"x100" (50" half, 167x167 px @0.6"/px)
+  Sampling: deterministic 100" regular grid, row-major, centers <0.95 R_sun
+  Gate: 30 <= patch-mean 171 DN/s <= 500 (exclude AR/coronal hole)
+  Selection: 80 evenly spaced (np.linspace) over qualifying patches
+  Inversion: demregpy dn2dem on published response (load_demregpy_response)
+    temps = 10**arange(5.7, 7.2+0.05, 0.05); noise = compute_aia_noise
+  Metrics: FWHM(logT) linear half-max interp; peak logT; 171/193 DN ratio; chi2
+
+(a) DATE-1 GATE TABLE  (2019-12-01, solar minimum)
+------------------------------------------------------------------------
+  metric                      mine     published       tol      
+  FWHM median                0.283         0.277  +/-0.015  PASS
+  peak logT median           5.975         5.970   +/-0.05  PASS
+  171/193 median             2.100         2.190    +/-0.3  PASS
+  FWHM range (min-max)  0.230-0.401     pub 0.229-0.383   span match PASS
+  n_patches=80  chi2_median=0.998
+
+(b) DATE-2 SUMMARY  (2020-05-15, deep minimum)
+------------------------------------------------------------------------
+  FWHM median        = 0.281
+  FWHM range         = 0.225 - 0.412
+  FWHM 5-95 pctile   = 0.231 - 0.378
+  peak logT median   = 5.975
+  171/193 median     = 2.110
+  chi2 median        = 1.003
+  n_patches          = 80
+
+(c) CROSS-DATE FWHM SHIFT
+------------------------------------------------------------------------
+  date1 median FWHM  = 0.2830
+  date2 median FWHM  = 0.2806
+  median shift (d2-d1) = -0.0025 dex
+  CONCLUSION: QS DEM width is STABLE across the two deep-minimum dates (|shift|=0.0025 < 0.01 dex).

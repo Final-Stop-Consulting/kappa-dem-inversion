@@ -4,6 +4,45 @@ All notable changes to this repository are documented here. Format loosely
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versions track the GitHub release tag and the associated Zenodo version DOI.
 
+## [Unreleased] — 2026-06-04
+
+Revision-analysis lock (TP-1080 referee response). New analysis scripts and
+their locked outputs supporting the referee response; no changes to the
+published pipeline scripts.
+
+### Added
+
+- `freebound_perion_kappa.py` — per-ion/per-level κ-consistent free-bound
+  (Milne reweighting at E_e = E_photon − I_edge); 131 Å FB κ/Mxw
+  1.00 → 1.58 (spectral, ≤ A_κ = 3.32) → 3.64 (population-folded).
+- `fb_lock_published_footing.py` — corrected-DN re-inversion on the
+  published footing: χ²/dof 1.004 → 0.999 (spectral) / 1.004
+  (floored-full); peak log T 6.175 and FWHM 0.218 unchanged; no
+  secondary artifact.
+- `lambda_sensitivity_sweep.py` — reg_tweak {0.5, 1, 2}× across 4 source
+  families: max ΔFWHM ≤ 0.009 dex; peak log T invariant.
+- `patch80_download.py` / `patch80_register.py` / `patch80_dem.py` —
+  rebuilt 80-patch real-QS pipeline. 2019-12-01: median FWHM 0.283,
+  range 0.230–0.401, peak log T 5.975, 171/193 median 2.10.
+  2020-05-15: median 0.281. Cross-date shift −0.0025 dex (stable).
+- `backreaction_bound.py` — static-loop self-consistency: at the observed
+  structure the (T_eff/T_core)^{7/2} correction is exactly multiplicative
+  (47% fluid-total reduction); the floating-apex counterfactual requires
+  apex T_eff = 2.56 MK (observationally excluded) and still floors the
+  reduction at 32%.
+- `refdem_robustness.py` — reference-DEM robustness: Brooks gate
+  (Mxw 0.322 / κ 0.307 vs published 0.319 / 0.305) PASS; CHIANTI
+  `quiet_sun.dem` (Mxw 0.387 / κ 0.378). Both source families land in
+  the real-QS band for every reference. Drop additional `.dem` curves
+  in `Data/reference_dems/`.
+- `Results/` gains the corresponding locked outputs.
+
+### Changed
+
+- `README.md` — real-QS row updated to rebuilt-pipeline values +
+  cross-date row; locked-results section appended.
+- Canonical free-bound numbers re-anchored to ChiantiPy 0.15.2 (submission-baseline version) after local validation; 0.16.0 retained as cross-version robustness band (131 A spectral 1.48-1.58). Environment pin: ChiantiPy==0.15.2 for exact reproduction.
+
 ## [2.1.1] — 2026-05-15
 
 Patch release: reference-correctness fixes and completion of release

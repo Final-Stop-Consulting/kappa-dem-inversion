@@ -17,15 +17,23 @@ Thumbs.db
 *.swp
 *.swo
 
-# Data (too large for repo — see README)
-Data/
+# Claude session metadata
+.claude/
+
+# Data: CHIANTI database + kappa tables are too large for the repo (see README).
+# Exception: reference-DEM curves (Data/reference_dems/*.dem) ARE tracked --
+# they are revision provenance. Source-paper PDFs there stay untracked.
+Data/*
+!Data/reference_dems/
+Data/reference_dems/*.pdf
 kappa_v10.1/
 CHIANTI*/
 
-# Results that can be regenerated (keep text summaries)
-# Uncomment these if you want to exclude binary results:
-Results/*.npz
-Results/*.json
+# Regenerable figure renders (figures tracked in prior releases remain tracked)
 Figures/
-# Claude Code verification metadata
-.claude/
+
+# Script outputs: Results/ (json/npz/txt) is the locked, validated record and IS tracked.
+# Ignored: run logs and bulky regenerable patch80 rasters (~120 MB per rerun).
+Results/_*.log
+Results/patch80/*.fits
+Results/patch80/*_reg.npz

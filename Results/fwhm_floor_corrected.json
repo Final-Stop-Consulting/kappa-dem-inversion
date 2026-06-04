@@ -1,0 +1,26 @@
+{
+  "single-T kappa2.5": {
+    "raw": 0.222,
+    "corrected": 0.138
+  },
+  "multi-T kappa2.5": {
+    "raw": 0.305,
+    "corrected": 0.25
+  },
+  "Brooks Mxw": {
+    "raw": 0.319,
+    "corrected": 0.267
+  },
+  "real-QS median": {
+    "raw": 0.277,
+    "corrected": 0.216
+  },
+  "real-QS min": {
+    "raw": 0.229,
+    "corrected": 0.149
+  },
+  "real-QS max": {
+    "raw": 0.383,
+    "corrected": 0.341
+  }
+}

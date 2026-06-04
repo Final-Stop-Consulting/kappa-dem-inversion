@@ -1,0 +1,33 @@
+% source (PRIMARY): Raymond & Doyle 1981, ApJ 247, 686 -- Fig. 3, average quiet-Sun (Q.R.) curve
+%   (reproduced as Del Zanna & Mason 2018, Living Rev. Sol. Phys. 15, 5, Fig. 57)
+% axis convention (RD81 Eq. 1): plotted quantity is int N_e^2 dh over Delta log T = 0.1 bins
+%   -> log10 DEM(T) = y - log10(T) + const  (the -logT tilt is RD81's own definition, not an interpretation;
+%      bin constant absorbed in normalization, FWHM-invariant)
+% digitized 2026-06-04 from the DZM18 reproduction; VERIFIED 2026-06-04 against the original RD81 Fig. 3
+%   (all knots within ~0.03 dex) and against the printed RD81 Table 1 power law:
+%   digitized rise slope 1.58 vs printed b = 1.65 +/- 0.15 (average QS), log a = 16.30
+% raw digitized (logT, log[int Ne^2 dh]) knots:
+%   (4.10,27.55) (4.40,27.10) (4.80,25.95) (5.00,25.10) (5.05,24.94) (5.20,25.00) (5.40,25.35) (5.60,25.70) (5.70,25.88) (5.80,26.05)
+%   (5.90,26.20) (6.00,26.33) (6.10,26.43) (6.15,26.45) (6.20,26.43) (6.30,26.25) (6.40,26.10) (6.50,26.00) (6.60,25.92) (6.70,25.88)
+% units: log10 T [K]   log10 DEM(T) [cm^-5 K^-1] (arbitrary offset)
+  4.10    23.0878
+  4.40    22.3378
+  4.80    20.7878
+  5.00    19.7378
+  5.05    19.5278
+  5.20    19.4378
+  5.40    19.5878
+  5.60    19.7378
+  5.70    19.8178
+  5.80    19.8878
+  5.90    19.9378
+  6.00    19.9678
+  6.10    19.9678
+  6.15    19.9378
+  6.20    19.8678
+  6.30    19.5878
+  6.40    19.3378
+  6.50    19.1378
+  6.60    18.9578
+  6.70    18.8178
+ -1
