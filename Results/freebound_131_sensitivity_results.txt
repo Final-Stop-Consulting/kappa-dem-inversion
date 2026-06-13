@@ -63,5 +63,5 @@ SUMMARY
              131 x 2      1.555       6.150    0.222     56.1%
              131 x 3      1.570       6.150    0.220     46.5%
 
-Numerical output saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Results/freebound_131_sensitivity_results.npz
-Figure saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Figures/freebound_131_sensitivity.{png,pdf}
+Numerical output saved to <repo>/Results/freebound_131_sensitivity_results.npz
+Figure saved to <repo>/Figures/freebound_131_sensitivity.{png,pdf}

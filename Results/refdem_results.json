@@ -9,7 +9,7 @@
   "gate_mxw_fwhm": 0.3218,
   "gate_kappa_fwhm": 0.3075,
   "dem_grid": "10**arange(5.7,7.2+0.05,0.05)",
-  "inputs_dir": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems",
+  "inputs_dir": "<repo>\\Data\\reference_dems",
   "n_user_dem_processed": 4,
   "results": {
     "Brooks2009_quiet_sun_eis": {
@@ -28,7 +28,7 @@
       "input_peak_logT": 6.05,
       "grid_bins_in_range": 23,
       "role": "GATE",
-      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\CHIANTI_11.0.2_database\\dem\\quiet_sun_eis.dem",
+      "path": "<repo>\\Data\\CHIANTI_11.0.2_database\\dem\\quiet_sun_eis.dem",
       "mxw_in_band": true,
       "kappa_in_band": true
     },
@@ -48,7 +48,7 @@
       "input_peak_logT": 6.0,
       "grid_bins_in_range": 19,
       "role": "reference",
-      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\CHIANTI_11.0.2_database\\dem\\quiet_sun.dem",
+      "path": "<repo>\\Data\\CHIANTI_11.0.2_database\\dem\\quiet_sun.dem",
       "mxw_in_band": true,
       "kappa_in_band": true
     },
@@ -68,7 +68,7 @@
       "input_peak_logT": 6.0,
       "grid_bins_in_range": 21,
       "role": "user",
-      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\delzanna2018_rd81.dem",
+      "path": "<repo>\\Data\\reference_dems\\delzanna2018_rd81.dem",
       "mxw_in_band": false,
       "kappa_in_band": true
     },
@@ -88,7 +88,7 @@
       "input_peak_logT": 6.15,
       "grid_bins_in_range": 21,
       "role": "user",
-      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\delzanna2018_rd81_raw.dem",
+      "path": "<repo>\\Data\\reference_dems\\delzanna2018_rd81_raw.dem",
       "mxw_in_band": false,
       "kappa_in_band": false
     },
@@ -108,7 +108,7 @@
       "input_peak_logT": 6.15,
       "grid_bins_in_range": 10,
       "role": "user",
-      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\landi_feldman_2008.dem",
+      "path": "<repo>\\Data\\reference_dems\\landi_feldman_2008.dem",
       "mxw_in_band": false,
       "kappa_in_band": true
     },
@@ -128,7 +128,7 @@
       "input_peak_logT": 6.05,
       "grid_bins_in_range": 14,
       "role": "user",
-      "path": "C:\\Users\\victo\\OneDrive - Final Stop Consulting LLC\\Documents\\The Research\\DEM Inversion\\github_repo\\Data\\reference_dems\\warren_brooks_2009.dem",
+      "path": "<repo>\\Data\\reference_dems\\warren_brooks_2009.dem",
       "mxw_in_band": true,
       "kappa_in_band": true
     }

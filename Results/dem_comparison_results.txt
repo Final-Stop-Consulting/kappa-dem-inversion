@@ -163,12 +163,12 @@ GENERATING FIGURES
 ======================================================================
 
   Figure 1: Full comparison (all κ values + published DEMs)
-  Saved: /sessions/sweet-clever-einstein/mnt/DEM Inversion/Analysis/Figures/dem_comparison.png
-  Saved: /sessions/sweet-clever-einstein/mnt/DEM Inversion/Analysis/Figures/dem_comparison.pdf
+  Saved: <repo>/Analysis/Figures/dem_comparison.png
+  Saved: <repo>/Analysis/Figures/dem_comparison.pdf
 
   Figure 2: Publication figure (κ=2.5 vs published)
-  Saved: /sessions/sweet-clever-einstein/mnt/DEM Inversion/Analysis/Figures/dem_shape_detail.png
-  Saved: /sessions/sweet-clever-einstein/mnt/DEM Inversion/Analysis/Figures/dem_shape_detail.pdf
+  Saved: <repo>/Analysis/Figures/dem_shape_detail.png
+  Saved: <repo>/Analysis/Figures/dem_shape_detail.pdf
 
 ======================================================================
 STAGE 5 SUMMARY
@@ -196,5 +196,5 @@ observations that pass through the standard DEM inversion and produce
 a recovered DEM indistinguishable in shape from published quiet Sun
 results.
 
-Full output saved to: /sessions/sweet-clever-einstein/mnt/DEM Inversion/Analysis/Results/dem_comparison_results.txt
+Full output saved to: <repo>/Analysis/Results/dem_comparison_results.txt
 ======================================================================

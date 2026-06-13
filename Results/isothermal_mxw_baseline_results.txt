@@ -1,8 +1,8 @@
 ======================================================================
 Isothermal Maxwellian baseline FWHM through demregpy
 ======================================================================
-SCRIPT_DIR   = /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo
-RESULTS_DIR  = /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Results
+SCRIPT_DIR   = <repo>
+RESULTS_DIR  = <repo>/Results
 
 AIA response: logT [4.0, 9.0], shape (101, 6)
 DEM grid: log T = 5.70-7.20, dlogT = 0.05, n = 31
@@ -34,4 +34,4 @@ For comparison (paper Table 4):
   kappa=2 recovered:             FWHM 0.353
   Real-QS distribution:          FWHM 0.229-0.383 (median 0.277)
 
-Numerical output saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Results/isothermal_mxw_baseline_results.npz
+Numerical output saved to <repo>/Results/isothermal_mxw_baseline_results.npz

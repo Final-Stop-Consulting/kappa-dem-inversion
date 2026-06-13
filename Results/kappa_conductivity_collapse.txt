@@ -1,0 +1,7 @@
+Spitzer-Harm closure non-existence (TP-1080 reframe)
+Du 2013 Eq.26 ratio at kappa=2.5: -16.5429 (finite negative; analytic continuation of a divergent integral)
+Poles at kappa=2,3,4; ->1 for kappa>~5.
+Validation gate worst |ratio-1| = 7.81e-04 (PASS<1e-3)
+Maxwellian carriers peak at 2.345 v_th; integral=60.000.
+kappa=2.5 conductivity integral diverges; cumulative ~ v_c^3.01.
+VERDICT: No finite, convention-independent, order-unity local Spitzer-Harm conductivity exists in the prior [2,3]; the SH small-correction picture is invalid in this regime.

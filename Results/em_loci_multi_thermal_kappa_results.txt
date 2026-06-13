@@ -55,5 +55,5 @@ Fe XVI exclusion sensitivity (proxy edge-case check)
   Change from dropping Fe XVI:        0.042 dex
   -> WARNING: Fe XVI dominates the spread (delta >= 0.02 dex)
 
-Numerical output saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Results/em_loci_multi_thermal_kappa_results.npz
-Figure saved to /sessions/inspiring-intelligent-lamport/mnt/DEM Inversion/github_repo/Figures/em_loci_multi_thermal_kappa.{png,pdf}
+Numerical output saved to <repo>/Results/em_loci_multi_thermal_kappa_results.npz
+Figure saved to <repo>/Figures/em_loci_multi_thermal_kappa.{png,pdf}

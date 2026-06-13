@@ -70,7 +70,7 @@ IMPACT ON KAPPA DN AND chi-squared
   335 Å     3.2428e+00   2.957e-01    3.5385e+00     +9.1%
 
 --- Re-running DEM inversion with continuum-corrected DN ---
-Loading demregpy AIA response from: C:\Users\victo\AppData\Roaming\Python\Python310\site-packages\demregpy\tresp\aia_tresp_en.dat
+Loading demregpy AIA response from: <site-packages>\demregpy\tresp\aia_tresp_en.dat
   Temperature grid: log T = 4.00 to 9.00, 101 points
   Channels: ['A94', 'A131', 'A171', 'A193', 'A211', 'A335']
 
@@ -110,4 +110,4 @@ If the corrected chi-squared is LOWER than the original, the continuum
 correction IMPROVES the fit — meaning the lines-only result was
 conservative and the missing continuum was not hiding a problem.
 
-Results saved to: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Results\continuum_estimate_results.txt
+Results saved to: <repo>\Results\continuum_estimate_results.txt

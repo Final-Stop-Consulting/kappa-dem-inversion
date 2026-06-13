@@ -6,7 +6,7 @@ Date: 2026-03-23 11:20:54
 
 Loading Stage 2 checkpoint (κ-independent per-ion contributions)...
   Loaded 984 ion-channel entries across 6 channels
-Loading demregpy AIA response from: C:\Users\victo\AppData\Roaming\Python\Python310\site-packages\demregpy\tresp\aia_tresp_en.dat
+Loading demregpy AIA response from: <site-packages>\demregpy\tresp\aia_tresp_en.dat
   Temperature grid: log T = 4.00 to 9.00, 101 points
   Channels: ['A94', 'A131', 'A171', 'A193', 'A211', 'A335']
 
@@ -165,7 +165,7 @@ SENSITIVITY TEST SUMMARY
 
 ==========================================================================================
 
-Figure saved to C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Figures\kappa_sensitivity_comparison.png
+Figure saved to <repo>\Figures\kappa_sensitivity_comparison.png
 
 ######################################################################
 # TEST 2: Abundance sensitivity at κ=2.5
@@ -260,9 +260,9 @@ ABUNDANCE COMPARISON (κ=2.5)
      211 Å         0.735         0.743         0.008
      335 Å         0.948         0.958         0.010
 
-Results saved to C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Results\kappa_sensitivity_results.npz
+Results saved to <repo>\Results\kappa_sensitivity_results.npz
 
 ======================================================================
 ALL SENSITIVITY TESTS COMPLETE
-Full output saved to: C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\Analysis\Results\sensitivity_results.txt
+Full output saved to: <repo>\Results\sensitivity_results.txt
 ======================================================================

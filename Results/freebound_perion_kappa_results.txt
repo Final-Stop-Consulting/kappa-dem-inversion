@@ -46,4 +46,4 @@ T_eff=1.50 MK (logT=6.176) kappa=2.5 kT_eff=129.27 eV A_kappa=3.3234
      n_8   8.5779e-04   5.6095e-03      1.954    3.346
    fe_10   7.4546e-04   2.9771e-03      2.311    1.728
 
-Saved JSON+NPZ+records to C:\Users\victo\OneDrive - Final Stop Consulting LLC\Documents\The Research\DEM Inversion\github_repo\Results
+Saved JSON+NPZ+records to <repo>\Results
