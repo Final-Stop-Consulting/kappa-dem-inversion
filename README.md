@@ -155,7 +155,8 @@ The main pipeline takes ~15–20 minutes on first run (Stage 2 ion computation v
 ## Output
 
 - `Results/` — Numerical results (`.npz` checkpoints, `.json` per-ion contributions, `.txt` log summaries)
-- `Figures/` — Publication figures (`.pdf`, `.png`)
+
+Scripts that render figures write `.pdf`/`.png` files to a local `Figures/` directory; these are regenerable and are not tracked in the repository.
 
 ## References
 

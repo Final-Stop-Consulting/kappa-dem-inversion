@@ -29,7 +29,7 @@ Data/reference_dems/*.pdf
 kappa_v10.1/
 CHIANTI*/
 
-# Regenerable figure renders (figures tracked in prior releases remain tracked)
+# Regenerable figure renders -- not tracked; regenerate by running the scripts
 Figures/
 
 # Script outputs: Results/ (json/npz/txt) is the locked, validated record and IS tracked.
