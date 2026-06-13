@@ -1,0 +1,121 @@
+{
+  "demregpy_version": "0.6.2",
+  "dn2dem_signature": "dn2dem(dn_in, edn_in, tresp, tresp_logt, temps, reg_tweak=1.0, max_iter=10, gloci=0, rgt_fact=1.5, dem_norm0=None, nmu=40, warn=False, emd_int=False, emd_ret=False, l_emd=False, non_pos=False)",
+  "reg_tweak_meaning": "The target normalised (reduced) chi-squared used in the Morozov discrepancy principle to select the regularization parameter lambda (discr = sum(arg) - sum(err**2)*reg_tweak).",
+  "temps_grid": "10**arange(5.7, 7.25, 0.05)",
+  "dof": 5,
+  "gate_check": {
+    "single-T kappa=2.5": {
+      "fwhm": 0.22235,
+      "published": 0.222,
+      "diff": 0.00035,
+      "pass_": true
+    },
+    "multi-T kappa=2.5": {
+      "fwhm": 0.30782,
+      "published": 0.305,
+      "diff": 0.00282,
+      "pass_": true
+    },
+    "Brooks-Mxw forward": {
+      "fwhm": 0.32233,
+      "published": 0.319,
+      "diff": 0.00333,
+      "pass_": true
+    },
+    "isothermal Mxw": {
+      "fwhm": 0.17604,
+      "published": 0.174,
+      "diff": 0.00204,
+      "pass_": true
+    }
+  },
+  "sweep": {
+    "single-T kappa=2.5": {
+      "0.5": {
+        "chi2": 8.43046,
+        "chi2_dof": 1.68609,
+        "peak_logT": 6.175,
+        "fwhm": 0.22542
+      },
+      "1.0": {
+        "chi2": 7.58772,
+        "chi2_dof": 1.51754,
+        "peak_logT": 6.175,
+        "fwhm": 0.22235
+      },
+      "2.0": {
+        "chi2": 6.93375,
+        "chi2_dof": 1.38675,
+        "peak_logT": 6.175,
+        "fwhm": 0.21968
+      }
+    },
+    "multi-T kappa=2.5": {
+      "0.5": {
+        "chi2": 0.76063,
+        "chi2_dof": 0.15213,
+        "peak_logT": 5.975,
+        "fwhm": 0.3074
+      },
+      "1.0": {
+        "chi2": 0.97617,
+        "chi2_dof": 0.19523,
+        "peak_logT": 5.975,
+        "fwhm": 0.30782
+      },
+      "2.0": {
+        "chi2": 2.05301,
+        "chi2_dof": 0.4106,
+        "peak_logT": 5.975,
+        "fwhm": 0.31006
+      }
+    },
+    "Brooks-Mxw forward": {
+      "0.5": {
+        "chi2": 0.75289,
+        "chi2_dof": 0.15058,
+        "peak_logT": 5.975,
+        "fwhm": 0.32149
+      },
+      "1.0": {
+        "chi2": 0.95722,
+        "chi2_dof": 0.19144,
+        "peak_logT": 5.975,
+        "fwhm": 0.32233
+      },
+      "2.0": {
+        "chi2": 2.01248,
+        "chi2_dof": 0.4025,
+        "peak_logT": 5.975,
+        "fwhm": 0.32518
+      }
+    },
+    "isothermal Mxw": {
+      "0.5": {
+        "chi2": 18.74897,
+        "chi2_dof": 3.74979,
+        "peak_logT": 6.175,
+        "fwhm": 0.16687
+      },
+      "1.0": {
+        "chi2": 38.01395,
+        "chi2_dof": 7.60279,
+        "peak_logT": 6.175,
+        "fwhm": 0.17604
+      },
+      "2.0": {
+        "chi2": 33.71098,
+        "chi2_dof": 6.7422,
+        "peak_logT": 6.175,
+        "fwhm": 0.17484
+      }
+    }
+  },
+  "fwhm_stability_max_delta": {
+    "single-T kappa=2.5": 0.00573,
+    "multi-T kappa=2.5": 0.00266,
+    "Brooks-Mxw forward": 0.00369,
+    "isothermal Mxw": 0.00916
+  }
+}

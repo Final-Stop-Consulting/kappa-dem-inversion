@@ -1,0 +1,50 @@
+{
+  "94": {
+    "fb_mxw_dn": 0.12386044207750321,
+    "fb_kappa_spec_dn": 0.14408591392793244,
+    "fb_kappa_full_dn": 0.14190120815052207,
+    "ratio_old_ffproxy": 0.7853825963888855,
+    "ratio_new_spec": 1.163292424208962,
+    "ratio_new_full": 1.14565397773835
+  },
+  "131": {
+    "fb_mxw_dn": 1.4321244675963094,
+    "fb_kappa_spec_dn": 2.123309103103424,
+    "fb_kappa_full_dn": 2.1352459880691264,
+    "ratio_old_ffproxy": 1.0044390747900935,
+    "ratio_new_spec": 1.482628885370002,
+    "ratio_new_full": 1.4909639744183287
+  },
+  "171": {
+    "fb_mxw_dn": 1.260522006084277,
+    "fb_kappa_spec_dn": 2.4562838396961557,
+    "fb_kappa_full_dn": 2.4479707950819902,
+    "ratio_old_ffproxy": 1.232226513567976,
+    "ratio_new_spec": 1.9486243221777848,
+    "ratio_new_full": 1.942029399936015
+  },
+  "193": {
+    "fb_mxw_dn": 2.0995875365276495,
+    "fb_kappa_spec_dn": 4.547255700517757,
+    "fb_kappa_full_dn": 4.5268478309295475,
+    "ratio_old_ffproxy": 1.3273551537936097,
+    "ratio_new_spec": 2.165785241818554,
+    "ratio_new_full": 2.156065299576012
+  },
+  "211": {
+    "fb_mxw_dn": 1.3878184268364007,
+    "fb_kappa_spec_dn": 3.25122884843928,
+    "fb_kappa_full_dn": 3.240590524094743,
+    "ratio_old_ffproxy": 1.4036849679023797,
+    "ratio_new_spec": 2.342690358889825,
+    "ratio_new_full": 2.3350248573091985
+  },
+  "335": {
+    "fb_mxw_dn": 0.026232166438899033,
+    "fb_kappa_spec_dn": 0.05632286214620292,
+    "fb_kappa_full_dn": 0.056173808915345264,
+    "ratio_old_ffproxy": 1.6686923411740857,
+    "ratio_new_spec": 2.14709152129666,
+    "ratio_new_full": 2.1414094427232095
+  }
+}

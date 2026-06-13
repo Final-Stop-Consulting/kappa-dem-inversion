@@ -1,0 +1,37 @@
+======================================================================
+Isothermal Maxwellian baseline FWHM through demregpy
+======================================================================
+SCRIPT_DIR   = <repo>
+RESULTS_DIR  = <repo>/Results
+
+AIA response: logT [4.0, 9.0], shape (101, 6)
+DEM grid: log T = 5.70-7.20, dlogT = 0.05, n = 31
+
+Isothermal Maxwellian (no kappa) DN/s/px at log T = 6.176:
+ Chan             DN            edn       frac
+   94     9.5955e-01     1.3975e+00      1.456
+  131     3.1747e+00     1.7336e+00      0.546
+  171     1.1810e+02     6.8579e+00      0.058
+  193     6.3849e+02     1.4601e+01      0.023
+  211     1.2946e+02     6.3806e+00      0.049
+  335     3.4189e+00     1.4393e+00      0.421
+
+Running demregpy DEM inversion...
+  done in 0.00s; chi^2 (raw) = 33.550, chi^2/dof = 6.710
+
+Isothermal Maxwellian (no kappa) recovered DEM:
+  peak log T = 6.150
+  T_peak     = 1.41 MK
+  FWHM       = 0.174 dex (log T)
+  chi^2 (raw) = 33.550; chi^2/dof = 6.710
+
+For comparison (paper Table 4):
+  Isothermal Mxw (this script):  FWHM ~0.174 (algorithmic floor)
+  kappa=3 recovered:             FWHM 0.191
+  kappa=2.5 recovered:           FWHM 0.222
+  Brooks-shape Mxw forward:      FWHM 0.319 (multi-T)
+  Multi-T kappa=2.5:             FWHM 0.305
+  kappa=2 recovered:             FWHM 0.353
+  Real-QS distribution:          FWHM 0.229-0.383 (median 0.277)
+
+Numerical output saved to <repo>/Results/isothermal_mxw_baseline_results.npz

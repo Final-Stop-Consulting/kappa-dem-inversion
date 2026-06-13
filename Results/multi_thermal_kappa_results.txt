@@ -1,0 +1,87 @@
+======================================================================
+Multi-thermal kappa test (paper Section 3.4)
+======================================================================
+AIA response: logT [4.0, 9.0], shape (101, 6)
+DEM grid: log T = 5.70–7.20, dlogT = 0.05, n = 31
+Brooks DEM: 29 knots, log T = 5.4–6.8
+Brooks DEM peak: log T = 6.050, DEM = 4.760e+20
+Brooks integrated EM (linear T): 2.916e+26
+Brooks integrated EM (∫ DEM dlnT): 2.908e+26
+
+Loading Dz23 ion fractions...
+  kappa: 495 (Z, stage) entries
+  mxw:   495 (Z, stage) entries
+  kappa logT range: 4.0–9.0, n = 101
+
+Loading per-ion checkpoint at T_eff = 1.5 MK...
+  channels: [94, 131, 171, 193, 211, 335]
+  total (ion, channel) entries: 984
+
+Factoring out ion-intrinsic emissivity at T_eff...
+  ions with valid intrinsic emissivity: 164
+  skipped (f_Mxw≈0 at T_eff): 6 (ion, channel) entries
+
+Interpolating ion fractions onto DEM grid...
+  done. 164 ions × 31 temperatures.
+
+Building synthetic responses and DN...
+
+Sanity check: synth_Mxw(T_eff) vs checkpoint sum:
+    94 Å: checkpoint Σ = 6.8451e-27, synth(log T=6.200) = 5.4771e-27, ratio = 0.800
+   131 Å: checkpoint Σ = 2.0444e-26, synth(log T=6.200) = 1.6504e-26, ratio = 0.807
+   171 Å: checkpoint Σ = 8.8164e-25, synth(log T=6.200) = 5.0526e-25, ratio = 0.573
+   193 Å: checkpoint Σ = 4.6338e-24, synth(log T=6.200) = 4.4953e-24, ratio = 0.970
+   211 Å: checkpoint Σ = 1.2380e-24, synth(log T=6.200) = 1.4734e-24, ratio = 1.190
+   335 Å: checkpoint Σ = 2.3234e-26, synth(log T=6.200) = 2.3159e-26, ratio = 0.997
+
+Shape comparison synth_Mxw vs demregpy tresp (peak log T per channel):
+    94 Å: synth peak = 5.75, demregpy peak = 6.85
+   131 Å: synth peak = 5.70, demregpy peak = 5.75
+   171 Å: synth peak = 5.90, demregpy peak = 5.90
+   193 Å: synth peak = 6.15, demregpy peak = 6.15
+   211 Å: synth peak = 6.25, demregpy peak = 6.25
+   335 Å: synth peak = 6.40, demregpy peak = 6.40
+
+Synthetic DN/s/px (Brooks DEM):
+ Chan    kappa_synth      Mxw_synth     Mxw_demreg  k/M_synth
+   94     4.3772e+00     4.4125e+00     3.7738e-01      0.992
+  131     4.2113e+01     4.0440e+01     3.7870e+00      1.041
+  171     1.8023e+03     1.7819e+03     1.9771e+02      1.011
+  193     8.0158e+02     8.4602e+02     1.1264e+02      0.947
+  211     1.5286e+02     1.6193e+02     1.8692e+01      0.944
+  335     7.3095e+00     7.3948e+00     1.2553e+00      0.988
+
+DN for inversion (Mxw_demreg × κ/Mxw_synth_ratio):
+ Chan             DN            edn   frac_err
+   94     3.7437e-01     1.2468e+00      3.330
+  131     3.9438e+00     1.8428e+00      0.467
+  171     1.9998e+02     8.8723e+00      0.044
+  193     1.0672e+02     6.0691e+00      0.057
+  211     1.7645e+01     2.6063e+00      0.148
+  335     1.2408e+00     1.2802e+00      1.032
+
+Running demregpy DEM inversion...
+  done in 0.0s; chi^2 (raw) = 0.858, chi^2/dof = 0.172; dem shape (30,)
+
+DEM shape metrics:
+  peak: log T = 5.975, T = 0.94 MK
+  FWHM = 0.308 dex (log T)
+
+DN recovery (predicted from recovered DEM / observed):
+    94 Å:   90.7%
+   131 Å:   88.3%
+   171 Å:   91.7%
+   193 Å:   93.1%
+   211 Å:  105.9%
+   335 Å:   93.0%
+
+======================================================================
+SUMMARY
+======================================================================
+Multi-thermal kappa=2.5 (Brooks shape) recovered DEM:
+  peak log T = 5.975, FWHM = 0.308, chi^2 (raw) = 0.858, chi^2/dof = 0.172
+
+For comparison:
+  Single-T kappa=2.5 (existing):  FWHM 0.222
+  Brooks-shape Mxw forward:       FWHM 0.319 (see brooks_mxw_forward.py)
+  Real-QS distribution:           FWHM 0.229-0.383 (median 0.277)

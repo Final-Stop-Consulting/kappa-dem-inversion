@@ -1,0 +1,70 @@
+======================================================================
+Brooks-shape Maxwellian forward model (paper Section 3.4, Table 4)
+======================================================================
+AIA response: logT [4.0, 9.0], shape (101, 6)
+DEM grid: log T = 5.70-7.20, dlogT = 0.05, n = 31
+Brooks DEM: 29 knots, log T = 5.4-6.8
+Brooks DEM peak: log T = 6.050, DEM = 4.760e+20
+Brooks integrated EM (linear T): 2.916e+26
+
+Loading Dz23 matched Maxwellian ion fractions...
+  mxw:   495 (Z, stage) entries
+  mxw logT range: 4.0-9.0, n = 101
+
+Loading per-ion checkpoint at T_eff = 1.5 MK...
+  channels: [94, 131, 171, 193, 211, 335]
+  total (ion, channel) entries: 984
+
+Factoring out ion-intrinsic emissivity at T_eff...
+  ions with valid intrinsic emissivity: 164
+  skipped (f_Mxw~0 at T_eff): 6 (ion, channel) entries
+
+Interpolating Mxw ion fractions onto DEM grid...
+  done. 164 ions x 31 temperatures.
+
+Building synthetic Maxwellian response and DN...
+
+Synthetic DN/s/px (Brooks DEM, pure Maxwellian):
+ Chan      Mxw_synth     Mxw_demreg      ratio
+   94     4.4125e+00     3.7738e-01     11.692
+  131     4.0440e+01     3.7870e+00     10.678
+  171     1.7819e+03     1.9771e+02      9.013
+  193     8.4602e+02     1.1264e+02      7.511
+  211     1.6193e+02     1.8692e+01      8.663
+  335     7.3948e+00     1.2553e+00      5.891
+
+DN for inversion (demregpy tresp x Brooks DEM):
+ Chan             DN            edn   frac_err
+   94     3.7738e-01     1.2476e+00      3.306
+  131     3.7870e+00     1.8211e+00      0.481
+  171     1.9771e+02     8.8227e+00      0.045
+  193     1.1264e+02     6.2287e+00      0.055
+  211     1.8692e+01     2.6666e+00      0.143
+  335     1.2553e+00     1.2813e+00      1.021
+
+Running demregpy DEM inversion...
+  done in 0.0s; chi^2 (raw) = 0.927, chi^2/dof = 0.185; dem shape (30,)
+
+DEM shape metrics:
+  peak: log T = 5.975, T = 0.94 MK
+  FWHM = 0.322 dex (log T)
+
+DN recovery (predicted from recovered DEM / observed):
+    94 A:   91.5%
+   131 A:   90.5%
+   171 A:   91.6%
+   193 A:   92.6%
+   211 A:  106.0%
+   335 A:   93.6%
+
+======================================================================
+SUMMARY
+======================================================================
+Brooks-shape Maxwellian forward (no kappa) recovered DEM:
+  peak log T = 5.975, FWHM = 0.322, chi^2 (raw) = 0.927, chi^2/dof = 0.185
+
+For comparison (paper Table 4):
+  Single-T kappa=2.5 recovered:   FWHM 0.222
+  Multi-T kappa=2.5 (Brooks):     FWHM 0.305
+  Brooks-shape Mxw forward (this): FWHM ~0.319
+  Real-QS distribution:           FWHM 0.229-0.383 (median 0.277)

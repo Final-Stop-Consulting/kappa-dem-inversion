@@ -1,0 +1,49 @@
+==============================================================================
+PER-ION / PER-LEVEL KAPPA-CONSISTENT FREE-BOUND  (R3.2 = R4.5)
+T_eff=1.50 MK (logT=6.176) kappa=2.5 kT_eff=129.27 eV A_kappa=3.3234
+==============================================================================
+  H (Z=1): done
+  He (Z=2): done
+  C (Z=6): done
+  N (Z=7): done
+  O (Z=8): done
+  Ne (Z=10): done
+  Mg (Z=12): done
+  Si (Z=14): done
+  S (Z=16): done
+  Ca (Z=20): done
+  Fe (Z=26): done
+  Ni (Z=28): done
+
+--- VALIDATION GATES ---
+(1) max in-band spread of sum_fbn/intensity per ion = 1.0000  (~1.00 => shape OK)
+(2) max in-band per-ion spectral kappa/Mxw ratio    = 3.323  (bound A_kappa=3.323)
+
+--- CHANNEL FREE-BOUND kappa/Maxwellian RATIOS ---
+ chan    FB_Mxw DN  old(ffproxy)   new spec  new spec*ionf
+   94   1.2386e-01         0.785      1.163          1.146
+  131   1.4321e+00         1.004      1.483          1.491
+  171   1.2605e+00         1.232      1.949          1.942
+  193   2.0996e+00         1.327      2.166          2.156
+  211   1.3878e+00         1.404      2.343          2.335
+  335   2.6232e-02         1.669      2.147          2.141
+
+--- 131 A per-ion free-bound (top by Mxw DN) ---
+     ion    FB_Mxw DN    FB_kap DN spec ratio  ionfrac
+    he_3   8.4354e-01   1.3944e+00      1.653    1.000
+     h_2   5.0621e-01   5.6189e-01      1.110    1.000
+     o_7   2.0745e-02   1.2155e-02      1.631    0.359
+   mg_11   1.6067e-02   3.6150e-02      2.507    0.898
+     c_7   9.4689e-03   1.6722e-02      1.551    1.139
+     o_8   7.5530e-03   4.5025e-02      2.023    2.947
+    ne_9   7.1737e-03   9.8919e-03      1.715    0.804
+     c_6   5.8171e-03   1.0095e-02      2.511    0.691
+   fe_13   2.8223e-03   5.1293e-03      2.892    0.628
+   fe_12   2.5971e-03   4.1390e-03      2.259    0.706
+   fe_11   2.4796e-03   5.9685e-03      2.314    1.040
+     n_7   1.5726e-03   2.0652e-03      1.593    0.824
+     n_6   1.2228e-03   5.9281e-04      2.185    0.222
+     n_8   8.5779e-04   5.6095e-03      1.954    3.346
+   fe_10   7.4546e-04   2.9771e-03      2.311    1.728
+
+Saved JSON+NPZ+records to <repo>\Results

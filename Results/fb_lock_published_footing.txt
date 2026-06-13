@@ -1,0 +1,9 @@
+FB ratios: spec [1.163, 1.483, 1.949, 2.166, 2.343, 2.147] floor [1.145, 1.491, 1.942, 2.156, 2.335, 2.141]
+
+                  case     chi2  chi2/dof  peaklogT    FWHM    131DN    sec>6.5
+    NOMINAL lines-only    7.588     1.518     6.175   0.222    5.622       none
+   DRAFT proxy (fb=ff)    5.020     1.004     6.175   0.218   10.428       none
+           SPECTRAL fb    4.968     0.994     6.175   0.218   11.112       none
+       FLOORED-FULL fb    4.968     0.994     6.175   0.218   11.124       none
+
+GATES: lines-only expect chi2~7.588 ; draft proxy expect chi2~5.020 (published 1.00=5.020/5)

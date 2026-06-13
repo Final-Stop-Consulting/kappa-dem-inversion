@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+title: "Kappa DEM Inversion Pipeline"
+message: "If you use this software, please cite the associated paper."
+type: software
+version: "2.1.1"
+date-released: "2026-05-15"
+authors:
+  - family-names: Edmonds
+    given-names: Victor
+    affiliation: "Final Stop Consulting LLC"
+    email: vedmonds@finalstopconsulting.com
+repository-code: "https://github.com/Final-Stop-Consulting/kappa-dem-inversion"
+license: MIT
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19188096"
+    description: "Concept DOI (always resolves to the latest version)"
+preferred-citation:
+  type: article
+  title: "The Quiet-Sun DEM Under Kappa: Diagnostic Degeneracy and a Closure-Corrected Coronal Energy Budget"
+  authors:
+    - family-names: Edmonds
+      given-names: Victor
+      affiliation: "Final Stop Consulting LLC"
+  year: 2026
+  notes: "in preparation"
+references:
+  - type: article
+    title: "The Diagnostic Temperature Discrepancy as Evidence for Non-Maxwellian Coronal Electrons"
+    authors:
+      - family-names: Edmonds
+        given-names: Victor
+    journal: "Open Journal of Astrophysics"
+    volume: 9
+    year: 2026
+    doi: "10.33232/001c.161223"
+  - type: article
+    title: "Multi-diagnostic convergence: a single measurement in weakly collisional plasmas"
+    authors:
+      - family-names: Edmonds
+        given-names: Victor
+    journal: "Open Transport"
+    volume: 1
+    issue: 1
+    year: 2026
+    doi: "10.1515/ot-2026-0011"

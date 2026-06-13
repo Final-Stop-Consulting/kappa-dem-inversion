@@ -1,0 +1,67 @@
+========================================================================
+131 A DN sensitivity test (paper Section 2.3)
+========================================================================
+
+Loaded nominal results from kappa_dem_inversion_results.npz
+  kappa = 2.5, T_eff = 1.50 MK, T_core = 0.60 MK
+  nominal saved chi^2/dof = 1.5175
+
+Replay nominal inversion with shot+read noise...
+
+--- NOMINAL kappa=2.5 (lines-only) ---
+  chi^2 (raw)  = 8.244
+  chi^2/dof    = 1.649
+  peak log T   = 6.150  (T = 1.41 MK)
+  FWHM         = 0.225
+  secondary    = none above log T = 6.5
+  per-channel recovery (DN_reg / DN):
+     Chan             DN         DN_reg   recovery
+       94     1.3148e+00     1.0502e+00      79.9%
+      131     5.6224e+00     5.3994e+00      96.0%
+      171     3.1360e+02     2.8714e+02      91.6%
+      193     5.4124e+02     4.5347e+02      83.8%
+      211     9.5137e+01     1.0083e+02     106.0%
+      335     3.2428e+00     3.6138e+00     111.4%
+
+--- 131 A x 2 (intermediate) ---
+  chi^2 (raw)  = 7.777
+  chi^2/dof    = 1.555
+  peak log T   = 6.150  (T = 1.41 MK)
+  FWHM         = 0.222
+  secondary    = none above log T = 6.5
+  per-channel recovery (DN_reg / DN):
+     Chan             DN         DN_reg   recovery
+       94     1.3148e+00     1.1000e+00      83.7%
+      131     1.1245e+01     6.3128e+00      56.1%
+      171     3.1360e+02     2.9078e+02      92.7%
+      193     5.4124e+02     4.5881e+02      84.8%
+      211     9.5137e+01     1.0147e+02     106.7%
+      335     3.2428e+00     3.6734e+00     113.3%
+
+  131 A DN: 5.6224e+00 --> 1.6867e+01 (3x)
+
+--- 131 A x 3 (per-ion free-bound proxy) ---
+  chi^2 (raw)  = 7.849
+  chi^2/dof    = 1.570
+  peak log T   = 6.150  (T = 1.41 MK)
+  FWHM         = 0.220
+  secondary    = none above log T = 6.5
+  per-channel recovery (DN_reg / DN):
+     Chan             DN         DN_reg   recovery
+       94     1.3148e+00     1.1707e+00      89.0%
+      131     1.6867e+01     7.8430e+00      46.5%
+      171     3.1360e+02     2.9307e+02      93.5%
+      193     5.4124e+02     4.6295e+02      85.5%
+      211     9.5137e+01     1.0181e+02     107.0%
+      335     3.2428e+00     3.7460e+00     115.5%
+
+========================================================================
+SUMMARY
+========================================================================
+                Case   chi2/dof   peak logT     FWHM   131 rec
+             NOMINAL      1.649       6.150    0.225     96.0%
+             131 x 2      1.555       6.150    0.222     56.1%
+             131 x 3      1.570       6.150    0.220     46.5%
+
+Numerical output saved to <repo>/Results/freebound_131_sensitivity_results.npz
+Figure saved to <repo>/Figures/freebound_131_sensitivity.{png,pdf}

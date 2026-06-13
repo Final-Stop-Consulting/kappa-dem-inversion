@@ -1,0 +1,8 @@
+numpy<2.0
+scipy
+matplotlib
+astropy
+ChiantiPy>=0.15
+aiapy
+demregpy
+sunpy

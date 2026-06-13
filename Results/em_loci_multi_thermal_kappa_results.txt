@@ -1,0 +1,59 @@
+========================================================================
+Multi-thermal kappa EM-loci collapse (paper Section 3.6)
+========================================================================
+
+Loading Dz23 kappa = 2.5 and Maxwellian ion fractions...
+  ioneq logT range: 4.00-9.00, n = 101
+
+Loading Brooks 2009 quiet-Sun DEM...
+  Brooks DEM: 29 knots, log T = 5.40-6.80
+  DEM-weighted integral: 1.538e+20 (unit-less in this normalization)
+
+------------------------------------------------------------------------
+Per-line analysis:
+------------------------------------------------------------------------
+    Line    <f_k>_DEM    <f_M>_DEM  M/k ratio   log(M/k)   f_k(Teff)   f_M(Teff)  M/k @Teff
+   Fe IX   2.8348e-01   2.6004e-01      0.917     -0.037  9.6240e-02  3.1018e-02      0.322
+    Fe X   2.1715e-01   1.9396e-01      0.893     -0.049  2.0606e-01  1.1926e-01      0.579
+   Fe XI   1.4543e-01   1.4642e-01      1.007      0.003  2.8988e-01  2.7864e-01      0.961
+  Fe XII   5.5215e-02   6.2297e-02      1.128      0.052  1.8934e-01  2.6834e-01      1.417
+ Fe XIII   2.4152e-02   2.5681e-02      1.063      0.027  1.2548e-01  1.9970e-01      1.592
+  Fe XIV   6.5626e-03   6.9157e-03      1.054      0.023  4.6469e-02  7.5068e-02      1.615
+   Fe XV   1.7102e-03   1.8323e-03      1.071      0.030  1.4623e-02  2.0554e-02      1.406
+  Fe XVI   5.3871e-04   4.3650e-04      0.810     -0.091  4.9799e-03  3.5691e-03      0.717
+
+------------------------------------------------------------------------
+SPREAD COMPARISON (log10 across the 8 lines)
+------------------------------------------------------------------------
+  Single-T at T_eff:        log(M/k) range = [-0.492, 0.208]; spread = 0.700 dex
+  Multi-T (DEM-weighted):   log(M/k) range = [-0.091, 0.052]; spread = 0.144 dex
+  (single-T value above is the f_M/f_k ratio spread, NOT the paper
+   Table 6 EM-loci tilt of 1.060 dex; the 14% collapse statistic
+   below is computed against the Table 6 amplitude, not this value)
+
+Single-T ratio M/k consistency check against paper Table 6 f_k/f_M:
+    Line   this M/k(Teff)   paper f_k/f_M     -> M/k
+   Fe IX            0.322           3.100      0.323
+    Fe X            0.579           1.730      0.578
+   Fe XI            0.961           1.040      0.962
+  Fe XII            1.417           0.710      1.408
+ Fe XIII            1.592           0.630      1.587
+  Fe XIV            1.615           0.620      1.613
+   Fe XV            1.406           0.710      1.408
+  Fe XVI            0.717           1.400      0.714
+
+Paper Table 6 single-T spread: 1.060 dex (across 25.87-26.93)
+Multi-T compute spread:        0.144 dex
+Multi-T / single-T spread:     13.6%
+(Paper Section 3.6 reports 14% based on the v2-corrected single-T amplitude)
+
+------------------------------------------------------------------------
+Fe XVI exclusion sensitivity (proxy edge-case check)
+------------------------------------------------------------------------
+  Multi-T spread (all 8 lines):       0.144 dex
+  Multi-T spread (Fe IX-XV, no XVI):  0.101 dex
+  Change from dropping Fe XVI:        0.042 dex
+  -> WARNING: Fe XVI dominates the spread (delta >= 0.02 dex)
+
+Numerical output saved to <repo>/Results/em_loci_multi_thermal_kappa_results.npz
+Figure saved to <repo>/Figures/em_loci_multi_thermal_kappa.{png,pdf}
