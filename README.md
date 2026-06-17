@@ -5,7 +5,7 @@
 Forward-modeling and DEM inversion code for the paper:
 
 > **The Quiet-Sun DEM Under Kappa: Diagnostic Degeneracy and the Failure of the Conductive Closure**
-> V. Edmonds, Final Stop Consulting LLC (2026, in prep.)
+> V. Edmonds, Final Stop Consulting LLC (2026, Accepted for publication in Transport Phenomena (De Gruyer Brill))
 
 ## Overview
 
